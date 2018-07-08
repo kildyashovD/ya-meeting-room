@@ -9,7 +9,126 @@
 </head>
 
 <body>
-  test
+  <header class="page-header">
+    <a class="page-header__logo logo" href="#">
+      <img class="logo__img" src="img/logo.svg" alt="Логотип Яндекс Переговорок">
+    </a>
+    <a class="page-header__link buttin" href="#">Создать встречу</a>
+  </header>
+
+  <main class="main-content">
+    <section class="diagram-date">
+      <h2 class="diagram-date__heading visually-hidden">Календарь и диаграмма со временем</h2>
+      <div class="diagram-date__actually-date actually-date">
+        <p class="actually-date__day-value">14 дек · <span class="actually-date__description">Сегодня</span></p>
+        <button class="actually-date__previous" type="button">Предыдущий день</button>
+        <button class="actually-date__туче" type="button">Следующий день</button>
+      </div>
+      <div class="diagram-date__calendar calendar visually-hidden">
+        <div class="calendar__month">
+          <p class="caledar__month-value">Май · <span class="calendar__year-value">2018</span></p>
+          <ul class="calendar__week-days">
+            <li class="calendar__week-days-value">Пн</li>
+            <li class="calendar__week-days-value">Вт</li>
+            <li class="calendar__week-days-value">Ср</li>
+            <li class="calendar__week-days-value">Чт</li>
+            <li class="calendar__week-days-value">Пт</li>
+            <li class="calendar__week-days-value">Сб</li>
+            <li class="calendar__week-days-value">Вс</li>
+          </ul>
+          <ul class="calendar__days">
+            <li class="calendar__days-value">1</li>
+            <li class="calendar__days-value">2</li>
+            <li class="calendar__days-value">3</li>
+            <li class="calendar__days-value">4</li>
+            <li class="calendar__days-value">5</li>
+            <li class="calendar__days-value">6</li>
+            <li class="calendar__days-value">7</li>
+            <li class="calendar__days-value">8</li>
+            <li class="calendar__days-value">9</li>
+            <li class="calendar__days-value">10</li>
+            <li class="calendar__days-value">11</li>
+            <li class="calendar__days-value">12</li>
+            <li class="calendar__days-value">13</li>
+            <li class="calendar__days-value">14</li>
+            <li class="calendar__days-value">15</li>
+            <li class="calendar__days-value">16</li>
+            <li class="calendar__days-value">17</li>
+            <li class="calendar__days-value">18</li>
+            <li class="calendar__days-value">19</li>
+            <li class="calendar__days-value">20</li>
+            <li class="calendar__days-value">21</li>
+            <li class="calendar__days-value">22</li>
+            <li class="calendar__days-value">23</li>
+            <li class="calendar__days-value">24</li>
+            <li class="calendar__days-value">25</li>
+            <li class="calendar__days-value">26</li>
+            <li class="calendar__days-value">27</li>
+            <li class="calendar__days-value">28</li>
+            <li class="calendar__days-value">29</li>
+            <li class="calendar__days-value">30</li>
+          </ul>
+        </div>
+      </div>
+      <ul class="diagram-date__time diagram-time">
+        <li class="diagram-time__hours diagram-time__hours--disabled">8:00</li>
+        <li class="diagram-time__hours diagram-time__hours--disabled">9</li>
+        <li class="diagram-time__hours diagram-time__hours--disabled">10</li>
+        <li class="diagram-time__hours diagram-time__hours--now">11:05</li>
+        <li class="diagram-time__hours">12</li>
+        <li class="diagram-time__hours">13</li>
+        <li class="diagram-time__hours">14</li>
+        <li class="diagram-time__hours">15</li>
+        <li class="diagram-time__hours">16</li>
+        <li class="diagram-time__hours">17</li>
+        <li class="diagram-time__hours">18</li>
+        <li class="diagram-time__hours">19</li>
+        <li class="diagram-time__hours">20</li>
+        <li class="diagram-time__hours">21</li>
+        <li class="diagram-time__hours">22</li>
+        <li class="diagram-time__hours">23</li>
+      </ul>
+    </section>
+
+    <section class="diagram-content">
+      <div class="diagram-content__meeting-rooms meeting-rooms">
+
+        <template id="floor-template" style="display: none">
+          <div class="meeting-rooms__item">
+            <p class="meeting-rooms__floor"></p>
+          </div>
+        </template>
+
+        <template id="meeting-rooms-template" style="display: none;">
+          <div class="meeting-rooms__data">
+            <p class="meeting-rooms__name"></p>
+            <p class="meeting-rooms__size"></p>
+          </div>
+        </template>
+
+      </div>
+      <div class="diagram-content__meeting-time meeting-time">
+        <div class="meeting-time__timeline timeline">
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+          <div class="timeline__item"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/floor.js"></script>
 </body>
 
 </html>
