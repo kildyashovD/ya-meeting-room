@@ -61,25 +61,35 @@ var rooms = [
   }
 ];
 
-for (var i = 0; i < floors.length; i++) {
-  var floorsElement = floorsTemplate.content.cloneNode("true");
+generateFloorsTemplate ();
 
-  floorsElement.querySelector(".meeting-rooms__floor").textContent = floors[i];
+function generateFloorsTemplate () {
 
-  meetingRoomsListElement.appendChild(floorsElement);
-}
+  for (var i = 0; i < floors.length; i++) {
 
-for (var n = 0; n < rooms.length; n++) {
-  var roomsElement = meetingRoomsTemplate.content.cloneNode("true");
-  if (rooms[n].floor === "6 этаж") {
-    roomsElement.querySelector(".meeting-rooms__name").textContent = rooms[n].name;
-    roomsElement.querySelector(".meeting-rooms__size").textContent = rooms[n].size;
+    var floorsElement = floorsTemplate.content.cloneNode("true");
 
-    meetingRoomsListElement.querySelector(".meeting-rooms__item").appendChild(roomsElement);
-  } else {
-    roomsElement.querySelector(".meeting-rooms__name").textContent = rooms[n].name;
-    roomsElement.querySelector(".meeting-rooms__size").textContent = rooms[n].size;
+    floorsElement.querySelector(".meeting-rooms__floor").textContent = floors[i];
 
-    meetingRoomsListElement.querySelectorAll(".meeting-rooms__item")[floors.length-1].appendChild(roomsElement);
+    meetingRoomsListElement.appendChild(floorsElement);
+
+    generateMeetingRoomsTemplate (i);
   }
-}
+};
+
+function generateMeetingRoomsTemplate (i) {
+
+  for (var k = 0; k < rooms.length; k++) {
+
+    var roomsElement = meetingRoomsTemplate.content.cloneNode("true");
+
+    if (rooms[k].floor === floors[i]) {
+
+      roomsElement.querySelector(".meeting-rooms__name").textContent = rooms[k].name;
+
+      roomsElement.querySelector(".meeting-rooms__size").textContent = rooms[k].size;
+
+      meetingRoomsListElement.querySelectorAll(".meeting-rooms__item")[i].appendChild(roomsElement);
+    }
+  }
+};
