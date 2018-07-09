@@ -1,0 +1,27 @@
+.diagram-time {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.diagram-time__hours {
+  position: relative;
+  flex: 1;
+
+  text-align: center;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    height: 100vh;
+
+    border-left: 1px solid rgba(19,100,205,0.10);
+  }
+}

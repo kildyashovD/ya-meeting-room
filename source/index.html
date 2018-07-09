@@ -13,7 +13,7 @@
     <a class="page-header__logo logo" href="#">
       <img class="logo__img" src="img/logo.svg" alt="Логотип Яндекс Переговорок">
     </a>
-    <a class="page-header__link buttin" href="#">Создать встречу</a>
+    <a class="page-header__link button" href="#">Создать встречу</a>
   </header>
 
   <main class="main-content">
@@ -22,7 +22,7 @@
       <div class="diagram-date__actually-date actually-date">
         <p class="actually-date__day-value">14 дек · <span class="actually-date__description">Сегодня</span></p>
         <button class="actually-date__previous" type="button">Предыдущий день</button>
-        <button class="actually-date__туче" type="button">Следующий день</button>
+        <button class="actually-date__next" type="button">Следующий день</button>
       </div>
       <div class="diagram-date__calendar calendar visually-hidden">
         <div class="calendar__month">
@@ -74,7 +74,7 @@
         <li class="diagram-time__hours diagram-time__hours--disabled">8:00</li>
         <li class="diagram-time__hours diagram-time__hours--disabled">9</li>
         <li class="diagram-time__hours diagram-time__hours--disabled">10</li>
-        <li class="diagram-time__hours diagram-time__hours--now">11:05</li>
+        <li class="diagram-time__hours diagram-time__hours--now">11</li>
         <li class="diagram-time__hours">12</li>
         <li class="diagram-time__hours">13</li>
         <li class="diagram-time__hours">14</li>
@@ -101,7 +101,7 @@
 
         <template id="meeting-rooms-template" style="display: none;">
           <div class="meeting-rooms__data">
-            <p class="meeting-rooms__name"></p>
+            <a class="meeting-rooms__name" href="#"></a>
             <p class="meeting-rooms__size"></p>
           </div>
         </template>
@@ -109,8 +109,8 @@
       </div>
       <div class="diagram-content__meeting-time meeting-time">
         <div class="meeting-time__timeline timeline">
-          <div class="timeline__item"></div>
-          <div class="timeline__item"></div>
+          <div class="timeline__item timeline__item--blocked timeline__item--3h0m"></div>
+          <div class="timeline__item timeline__item--free timeline__item--2h15m"></div>
           <div class="timeline__item"></div>
           <div class="timeline__item"></div>
           <div class="timeline__item"></div>
