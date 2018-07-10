@@ -9,7 +9,16 @@ var rooms = [
     name: "Ржавый фред",
     floor: floors[1],
     size: "3-6 человек",
-    available: false
+    available: false,
+    meetings: [
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        beginning: 8,
+        during: 3,
+        participants: ["Дарт Вейдер"]
+      }
+    ]
   },
   {
     name: "Прачечная",
