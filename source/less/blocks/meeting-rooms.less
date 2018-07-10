@@ -1,7 +1,11 @@
 .meeting-rooms {
   box-sizing: border-box;
-  width: 245px;
-  padding: 21px 24px;
+  width: 100%;
+  min-height: ~"calc(100vh - 127px)";
+  padding: 21px 0 21px 24px;
+
+  background-color: #F6F7F9;
+  background-image: linear-gradient(to right, #ffffff 245px, #F6F7F9 245px);
 }
 
 .meeting-rooms__floor {
@@ -24,6 +28,7 @@
 }
 
 .meeting-rooms__data {
+  display: flex;
   margin: 0;
   margin-bottom: 16px;
 
@@ -44,6 +49,15 @@
   &--disabled {
     color: #858E98;
   }
+}
+
+.meeting-rooms__text-content {
+  min-width: 221px;
+}
+
+.meeting-rooms__timeline {
+  flex-grow: 1;
+  //width: ~"calc(100vw - 245px)";
 }
 
 .meeting-rooms__name {

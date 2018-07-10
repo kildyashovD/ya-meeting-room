@@ -17,13 +17,17 @@
   </header>
 
   <main class="main-content">
+
     <section class="diagram-date">
+
       <h2 class="diagram-date__heading visually-hidden">Календарь и диаграмма со временем</h2>
+
       <div class="diagram-date__actually-date actually-date">
         <p class="actually-date__day-value">14 дек · <span class="actually-date__description">Сегодня</span></p>
         <button class="actually-date__previous" type="button">Предыдущий день</button>
         <button class="actually-date__next" type="button">Следующий день</button>
       </div>
+
       <div class="diagram-date__calendar calendar visually-hidden">
         <div class="calendar__month">
           <p class="caledar__month-value">Май · <span class="calendar__year-value">2018</span></p>
@@ -101,23 +105,37 @@
 
         <template id="meeting-rooms-template" style="display: none;">
           <div class="meeting-rooms__data">
-            <a class="meeting-rooms__name" href="#"></a>
-            <p class="meeting-rooms__size"></p>
+            <div class="meeting-rooms__text-content">
+              <a class="meeting-rooms__name" href="#"></a>
+              <p class="meeting-rooms__size"></p>
+            </div>
+            <div class="meeting-rooms__timeline timeline">
+              <div class="timeline__item timeline__item--blocked timeline__item--3h0m"></div>
+              <div class="timeline__item timeline__item--free timeline__item--1h15m">
+                <a class="timeline__add-event" href="#">+</a>
+              </div>
+              <div class="timeline__item timeline__item--blocked timeline__item--3h0m"></div>
+              <div class="timeline__item timeline__item--free timeline__item--0h15m">
+                <a class="timeline__add-event" href="#">+</a>
+              </div>
+              <div class="timeline__item timeline__item--blocked timeline__item--3h0m"></div>
+              <div class="timeline__item timeline__item--blocked timeline__item--2h45m"></div>
+              <div class="timeline__item timeline__item--free timeline__item--1h30m">
+                <a class="timeline__add-event" href="#">+</a>
+              </div>
+              <div class="timeline__item timeline__item--blocked timeline__item--0h15m"></div>
+            </div>
           </div>
         </template>
 
       </div>
+     <!--
       <div class="diagram-content__meeting-time meeting-time">
         <div class="meeting-time__timeline timeline">
           <div class="timeline__item timeline__item--blocked timeline__item--3h0m"></div>
           <div class="timeline__item timeline__item--free timeline__item--2h15m"></div>
-          <template id="timeline-free-slot" style="display: none">
-            <div class="timeline__item timeline__item--free timeline__item--2h15m">
-
-            </div>
-          </template>
         </div>
-      </div>
+      </div>-->
     </section>
   </main>
   <script src="js/floor.js"></script>
