@@ -129,13 +129,77 @@
         </template>
 
       </div>
-     <!--
-      <div class="diagram-content__meeting-time meeting-time">
-        <div class="meeting-time__timeline timeline">
-          <div class="timeline__item timeline__item--blocked timeline__item--3h0m"></div>
-          <div class="timeline__item timeline__item--free timeline__item--2h15m"></div>
-        </div>
-      </div>-->
+
+    </section>
+
+    <section class="new-meeting">
+      <div class="new-meeting__wrapper">
+        <h2 class="new-meeting__heading">Новая встреча</h2>
+
+        <form class="new-meeting__form add-meeting-form" action="#">
+          <div class="add-meeting-form__item">
+            <div class="add-meeting-form__container">
+              <label for="meeting-them">Тема</label>
+              <input class="add-meeting-form__theme" type="text" name="theme" id="meeting-theme" placeholder="О чем будем говорить?">
+            </div>
+          </div>
+          <div class="add-meeting-form__item">
+            <div class="add-meeting-form__container">
+              <label for="meeting-date">Даты</label>
+              <input class="add-meeting-form__date" name="date" id="meeting-date" type="date">
+            </div>
+            <div class="add-meeting-form__container">
+              <label for="meeting-start-time">Начало</label>
+              <input class="add-meeting-form__time" name="start-time" id="meeting-start-time" type="time">
+            </div>
+            <div class="add-meeting-form__container">
+              <label for="meeting-end-time">Конец</label>
+              <input class="add-meeting-form__time" name="end-time" id="meeting-end-time" type="time">
+            </div>
+          </div>
+          <div class="add-meeting-form__item">
+            <div class="add-meeting-form__conta">
+              <label for="">Участники</label>
+              <input class="add-meeting-form__participants" type="text" placeholder="Например, Тор Одинович">
+              <ul class="participants-list">
+                <li class="participants-list__item">
+                  <p class="participants-list__name">Лекс Лютер · <span class="participants-list__floor">7 этаж</span></p>
+                </li>
+                <li class="participants-list__item">
+                  <p class="participants-list__name">Томас Андерсон · <span class="participants-list__floor">2 этаж</span></p>
+                </li>
+                <li class="participants-list__item">
+                  <p class="participants-list__name">Дарт Вейдер · <span class="participants-list__floor">3 этаж</span></p>
+                </li>
+                <li class="participants-list__item">
+                  <p class="participants-list__name">Кларк Кент · <span class="participants-list__floor">4 этаж</span></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="add-meeting-form__item recommended-rooms" data-heading="Рекомендованные переговорки">
+            <label for="recommended-rooms-gotem">
+              <span class="recommended-rooms__time">16:00-16:30</span>
+              <span class="recommended-rooms__name">Готем</span> ·
+              <span class="recommended-rooms__floor">4 этаж</span>
+            </label>
+            <input class="recommended-rooms__item" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem">
+            <label for="recommended-rooms-gotem">
+              <span class="recommended-rooms__time">16:00-16:30</span>
+              <span class="recommended-rooms__name">Поле непаханное</span> ·
+              <span class="recommended-rooms__floor">4 этаж</span>
+            </label>
+            <input class="recommended-rooms__item" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem">
+            <label for="recommended-rooms-gotem">
+              <span class="recommended-rooms__time">16:00-16:30</span>
+              <span class="recommended-rooms__name">Темная башня</span> ·
+              <span class="recommended-rooms__floor">4 этаж</span>
+            </label>
+            <input class="recommended-rooms__item" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem">
+          </div>
+          <button class="add-meeting-form__submit button" type="submit" name="button">Создать встречу</button>
+        </form>
+      </div>
     </section>
   </main>
   <script src="js/floor.js"></script>
