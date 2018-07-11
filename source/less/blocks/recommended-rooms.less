@@ -1,0 +1,33 @@
+.recommended-rooms {
+  display: flex;
+  flex-wrap: wrap;
+
+  &::before {
+    content: attr(data-heading);
+
+    display: block;
+    position: static;
+    margin-bottom: 4px;
+
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 16px;
+  }
+}
+
+.recommended-rooms__item {
+  box-sizing: border-box;
+
+  margin-bottom: 8px;
+  padding: 10px;
+  width: 100%;
+  min-height: 37px;
+
+  background-color: #E9ECEF;
+
+  border-radius: 4px;
+}
+
+.recommended-rooms__time {
+  margin-right: 16px;
+}
