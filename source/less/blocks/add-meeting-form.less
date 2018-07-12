@@ -1,0 +1,79 @@
+.add-meeting-form {
+  display: flex;
+  flex-direction: column;
+
+  min-height: ~"calc(100vh - 157px)";
+}
+
+.add-meeting-form__main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.add-meeting-form__footer {
+  padding-top: 20px;
+  margin-top: auto;
+  text-align: center;
+
+  border-top: 1px solid #e9ecef;
+}
+
+.add-meeting-form__item {
+  box-sizing: border-box;
+
+  display: flex;
+  width: 420px;
+  margin: 0;
+}
+
+.add-meeting-form__heading {
+  margin-bottom: 4px;
+
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 16px;
+}
+
+.add-meeting-form__container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &--dates-margin {
+    margin-right: 16px;
+  }
+
+  &--times-margin {
+    margin-right: 22px;
+  }
+}
+
+.add-meeting-form__container input {
+  box-sizing: border-box;
+
+  height: 38px;
+  padding: 10px 11px;
+
+  font-family: inherit;
+  font-size: 13px;
+  color: #858e98;
+  letter-spacing: 0.47px;
+  line-height: 15px;
+
+  border: 2px solid #e9ecef;
+  border-radius: 4px;
+}
+
+.add-meeting-form__participants {
+  margin-bottom: 12px;
+}
+
+.add-meeting-form__cancel {
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.add-meeting-form__submit {
+  margin-right: auto;
+}
