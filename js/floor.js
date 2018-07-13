@@ -3,20 +3,78 @@
 var floorsTemplate = document.querySelector("#floor-template");
 var meetingRoomsTemplate = document.querySelector("#meeting-rooms-template");
 var meetingRoomsListElement = document.querySelector(".meeting-rooms");
+var eventFree = document.querySelector("#timeline-item-free");
+var eventBlocked = document.querySelector("#timeline-item-blocked");
 var floors = ["7 этаж", "6 этаж"];
 var rooms = [
   {
     name: "Ржавый фред",
     floor: floors[1],
     size: "3-6 человек",
-    available: false,
+    freeTime: false,
     meetings: [
       {
         meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
-        beginning: 8,
-        during: 3,
-        participants: ["Дарт Вейдер"]
+        participants: ["Дарт Вейдер"],
+        startTime: "08:00",
+        endTime: "10:45",
+        during: "3h15m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "10:45",
+        endTime: "12:15",
+        during: "1h0m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "12:15",
+        endTime: "14:30",
+        during: "1h15m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "14:30",
+        endTime: "17:00",
+        during: "3h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "17:00",
+        endTime: "20:00",
+        during: "3h0m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "20:00",
+        endTime: "22:30",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "22:30",
+        endTime: "23:00",
+        during: "0h30m",
+        available: false
       }
     ]
   },
@@ -24,49 +82,569 @@ var rooms = [
     name: "Прачечная",
     floor: floors[1],
     size: "до 10 человек",
-    available: true
+    freeTime: true,
+    meetings: [
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "08:00",
+        endTime: "10:45",
+        during: "2h45m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "10:45",
+        endTime: "12:15",
+        during: "1h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "12:15",
+        endTime: "14:30",
+        during: "2h15m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "14:30",
+        endTime: "17:00",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "17:00",
+        endTime: "20:00",
+        during: "3h0m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "20:00",
+        endTime: "22:30",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "22:30",
+        endTime: "23:00",
+        during: "0h30m",
+        available: false
+      }
+    ]
   },
   {
     name: "Желтый дом",
     floor: floors[1],
     size: "до 10 человек",
-    available: true
+    freeTime: true,
+    meetings: [
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "08:00",
+        endTime: "10:45",
+        during: "2h45m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "10:45",
+        endTime: "12:15",
+        during: "1h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "12:15",
+        endTime: "14:30",
+        during: "2h15m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "14:30",
+        endTime: "17:00",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "17:00",
+        endTime: "20:00",
+        during: "3h0m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "20:00",
+        endTime: "22:30",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "22:30",
+        endTime: "23:00",
+        during: "0h30m",
+        available: false
+      }
+    ]
   },
   {
     name: "Оранжевый тюльпан",
     floor: floors[1],
     size: "до 10 человек",
-    available: false
+    freeTime: false,
+    meetings: [
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "08:00",
+        endTime: "10:45",
+        during: "2h45m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "10:45",
+        endTime: "12:15",
+        during: "1h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "12:15",
+        endTime: "14:30",
+        during: "2h15m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "14:30",
+        endTime: "17:00",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "17:00",
+        endTime: "20:00",
+        during: "3h0m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "20:00",
+        endTime: "22:30",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "22:30",
+        endTime: "23:00",
+        during: "0h30m",
+        available: false
+      }
+    ]
   },
   {
     name: "Джокер",
     floor: floors[0],
     size: "3-6 человек",
-    available: true
+    freeTime: true,
+    meetings: [
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "08:00",
+        endTime: "10:45",
+        during: "1h45m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "10:45",
+        endTime: "12:15",
+        during: "2h15m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "12:15",
+        endTime: "14:30",
+        during: "2h15m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "14:30",
+        endTime: "17:00",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "17:00",
+        endTime: "20:00",
+        during: "3h0m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "20:00",
+        endTime: "22:30",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "22:30",
+        endTime: "23:00",
+        during: "0h45m",
+        available: false
+      }
+    ]
   },
   {
     name: "Мариванна",
     floor: floors[0],
     size: "3-6 человек",
-    available: true
+    freeTime: true,
+    meetings: [
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "08:00",
+        endTime: "10:45",
+        during: "2h45m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "10:45",
+        endTime: "12:15",
+        during: "1h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "12:15",
+        endTime: "14:30",
+        during: "2h15m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "14:30",
+        endTime: "17:00",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "17:00",
+        endTime: "20:00",
+        during: "3h0m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "20:00",
+        endTime: "22:30",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "22:30",
+        endTime: "23:00",
+        during: "0h30m",
+        available: false
+      }
+    ]
   },
   {
     name: "Тонкий боб",
     floor: floors[0],
     size: "3-6 человек",
-    available: true
+    freeTime: true,
+    meetings: [
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "08:00",
+        endTime: "10:45",
+        during: "2h45m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "10:45",
+        endTime: "12:15",
+        during: "1h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "12:15",
+        endTime: "14:30",
+        during: "2h15m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "14:30",
+        endTime: "17:00",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "17:00",
+        endTime: "20:00",
+        during: "3h0m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "20:00",
+        endTime: "22:30",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "22:30",
+        endTime: "23:00",
+        during: "0h30m",
+        available: false
+      }
+    ]
   },
   {
     name: "Черная вдова",
     floor: floors[0],
     size: "3-6 человек",
-    available: true
+    freeTime: true,
+    meetings: [
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "08:00",
+        endTime: "10:45",
+        during: "2h45m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "10:45",
+        endTime: "12:15",
+        during: "1h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "12:15",
+        endTime: "14:30",
+        during: "2h15m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "14:30",
+        endTime: "17:00",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "17:00",
+        endTime: "20:00",
+        during: "3h0m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "20:00",
+        endTime: "22:30",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "22:30",
+        endTime: "23:00",
+        during: "0h30m",
+        available: false
+      }
+    ]
   },
   {
     name: "Белорусский ликер",
     floor: floors[0],
     size: "3-6 человек",
-    available: true
+    freeTime: true,
+    meetings: [
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "08:00",
+        endTime: "10:45",
+        during: "2h45m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "10:45",
+        endTime: "12:15",
+        during: "1h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "12:15",
+        endTime: "14:30",
+        during: "2h15m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "14:30",
+        endTime: "17:00",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "17:00",
+        endTime: "20:00",
+        during: "3h0m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "20:00",
+        endTime: "22:30",
+        during: "2h30m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "22:30",
+        endTime: "23:00",
+        during: "0h30m",
+        available: false
+      }
+    ]
   }
 ];
 
@@ -87,10 +665,11 @@ function generateFloorsTemplate () {
 };
 
 function generateMeetingRoomsTemplate (i) {
-
+  //debugger;
   for (var k = 0; k < rooms.length; k++) {
 
     var roomsElement = meetingRoomsTemplate.content.cloneNode("true");
+    var meetingRoomsCount;
 
     if (rooms[k].floor === floors[i]) {
 
@@ -99,6 +678,30 @@ function generateMeetingRoomsTemplate (i) {
       roomsElement.querySelector(".meeting-rooms__size").textContent = rooms[k].size;
 
       meetingRoomsListElement.querySelectorAll(".meeting-rooms__item")[i].appendChild(roomsElement);
+
+      meetingRoomsCount = meetingRoomsListElement.querySelectorAll(".timeline").length;
+
+      generateTimelineTemplate (k, meetingRoomsCount);
     }
   }
 };
+
+function generateTimelineTemplate (k, meetingRoomsCount) {
+
+  for (var j = 0; j < rooms[k].meetings.length; j++) {
+
+    var timelineFree = eventFree.content.cloneNode("true");
+    var timelineBlocked = eventBlocked.content.cloneNode("true");
+    var timelineDuringTime = rooms[k].meetings[j].during;
+
+    if(rooms[k].meetings[j].available) {
+      timelineFree.querySelector(".timeline__item").classList.add("timeline__item--" + timelineDuringTime);
+
+      meetingRoomsListElement.querySelectorAll(".timeline")[meetingRoomsCount - 1].appendChild(timelineFree);
+    } else {
+      timelineBlocked.querySelector(".timeline__item").classList.add("timeline__item--" + timelineDuringTime);
+
+      meetingRoomsListElement.querySelectorAll(".timeline")[meetingRoomsCount - 1].appendChild(timelineBlocked);
+    }
+  }
+}
