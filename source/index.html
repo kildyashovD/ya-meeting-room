@@ -9,6 +9,10 @@
 </head>
 
 <body>
+  <div class="welcome-modal">
+    <img class="welcome-modal__img" src="img/logo.svg" alt="Логотип Яндекс Переговоров">
+  </div>
+
   <header class="page-header">
     <a class="page-header__logo logo" href="#">
       <img class="logo__img" src="img/logo.svg" alt="Логотип Яндекс Переговорок">
@@ -109,23 +113,18 @@
               <a class="meeting-rooms__name" href="#"></a>
               <p class="meeting-rooms__size"></p>
             </div>
-            <div class="meeting-rooms__timeline timeline">
-              <div class="timeline__item timeline__item--blocked timeline__item--3h0m"></div>
-              <div class="timeline__item timeline__item--free timeline__item--1h15m">
-                <a class="timeline__add-event" href="#">+</a>
-              </div>
-              <div class="timeline__item timeline__item--blocked timeline__item--3h0m"></div>
-              <div class="timeline__item timeline__item--free timeline__item--0h15m">
-                <a class="timeline__add-event" href="#">+</a>
-              </div>
-              <div class="timeline__item timeline__item--blocked timeline__item--3h0m"></div>
-              <div class="timeline__item timeline__item--blocked timeline__item--2h45m"></div>
-              <div class="timeline__item timeline__item--free timeline__item--1h30m">
-                <a class="timeline__add-event" href="#">+</a>
-              </div>
-              <div class="timeline__item timeline__item--blocked timeline__item--0h15m"></div>
-            </div>
+            <div class="meeting-rooms__timeline timeline"></div>
           </div>
+        </template>
+
+        <template id="timeline-item-free">
+          <div class="timeline__item timeline__item--free">
+            <a class="timeline__add-event" href="#">+</a>
+          </div>
+        </template>
+
+        <template id="timeline-item-blocked">
+          <div class="timeline__item timeline__item--blocked"></div>
         </template>
 
       </div>
@@ -215,6 +214,7 @@
 
     </section>
   </main>
+  <script src="js/welcome-modal.js"></script>
   <script src="js/floor.js"></script>
   <script src="js/add-meeting-modal.js"></script>
 </body>

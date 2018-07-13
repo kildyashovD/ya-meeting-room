@@ -1,3 +1,5 @@
+"use strict";
+
 var newMeetingOpenModalButton = document.querySelector(".page-header__link");
 var formCloseModalButton = document.querySelector(".add-meeting-form__cancel");
 var newMeeting = document.querySelector(".new-meeting");
