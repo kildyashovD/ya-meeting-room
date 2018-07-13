@@ -18,7 +18,7 @@ var rooms = [
         date: "14 декабря",
         participants: ["Дарт Вейдер"],
         startTime: "08:00",
-        endTime: "10:45",
+        endTime: "11:15",
         during: "3h15m",
         available: false
       },
@@ -26,19 +26,19 @@ var rooms = [
         meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
         participants: ["Дарт Вейдер"],
-        startTime: "10:45",
+        startTime: "11:15",
         endTime: "12:15",
         during: "1h0m",
         available: false
       },
       {
-        meetingsName: "",
+        meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
-        participants: [],
+        participants: ["Дарт Вейдер"],
         startTime: "12:15",
-        endTime: "14:30",
+        endTime: "13:30",
         during: "1h15m",
-        available: true
+        available: false
       },
       {
         meetingsName: "Рассуждения о высоком",
@@ -50,13 +50,13 @@ var rooms = [
         available: false
       },
       {
-        meetingsName: "",
+        meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
-        participants: [],
+        participants: ["Дарт Вейдер"],
         startTime: "17:00",
         endTime: "20:00",
         during: "3h0m",
-        available: true
+        available: false
       },
       {
         meetingsName: "Рассуждения о высоком",
@@ -107,17 +107,35 @@ var rooms = [
         date: "14 декабря",
         participants: [],
         startTime: "12:15",
-        endTime: "14:30",
-        during: "2h15m",
+        endTime: "13:00",
+        during: "0h45m",
         available: true
       },
       {
         meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
         participants: ["Дарт Вейдер"],
-        startTime: "14:30",
+        startTime: "13:00",
+        endTime: "14:00",
+        during: "1h0m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "14:00",
+        endTime: "14:45",
+        during: "0h45m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "14:45",
         endTime: "17:00",
-        during: "2h30m",
+        during: "2h15m",
         available: false
       },
       {
@@ -125,8 +143,26 @@ var rooms = [
         date: "14 декабря",
         participants: [],
         startTime: "17:00",
+        endTime: "17:45",
+        during: "0h45m",
+        available: true
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
+        startTime: "17:45",
+        endTime: "18:15",
+        during: "0h30m",
+        available: false
+      },
+      {
+        meetingsName: "",
+        date: "14 декабря",
+        participants: [],
+        startTime: "18:15",
         endTime: "20:00",
-        during: "3h0m",
+        during: "1h45m",
         available: true
       },
       {
@@ -169,17 +205,17 @@ var rooms = [
         date: "14 декабря",
         participants: ["Дарт Вейдер"],
         startTime: "10:45",
-        endTime: "12:15",
-        during: "1h30m",
+        endTime: "12:00",
+        during: "1h15m",
         available: false
       },
       {
         meetingsName: "",
         date: "14 декабря",
         participants: [],
-        startTime: "12:15",
+        startTime: "12:00",
         endTime: "14:30",
-        during: "2h15m",
+        during: "2h30m",
         available: true
       },
       {
@@ -245,13 +281,13 @@ var rooms = [
         available: false
       },
       {
-        meetingsName: "",
+        meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
-        participants: [],
+        participants: ["Дарт Вейдер"],
         startTime: "12:15",
         endTime: "14:30",
         during: "2h15m",
-        available: true
+        available: false
       },
       {
         meetingsName: "Рассуждения о высоком",
@@ -263,13 +299,13 @@ var rooms = [
         available: false
       },
       {
-        meetingsName: "",
+        meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
-        participants: [],
+        participants: ["Дарт Вейдер"],
         startTime: "17:00",
         endTime: "20:00",
         during: "3h0m",
-        available: true
+        available: false
       },
       {
         meetingsName: "Рассуждения о высоком",
@@ -302,7 +338,7 @@ var rooms = [
         date: "14 декабря",
         participants: ["Дарт Вейдер"],
         startTime: "08:00",
-        endTime: "10:45",
+        endTime: "9:45",
         during: "1h45m",
         available: false
       },
@@ -310,8 +346,8 @@ var rooms = [
         meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
         participants: ["Дарт Вейдер"],
-        startTime: "10:45",
-        endTime: "12:15",
+        startTime: "9:45",
+        endTime: "12:00",
         during: "2h15m",
         available: false
       },
@@ -319,8 +355,8 @@ var rooms = [
         meetingsName: "",
         date: "14 декабря",
         participants: [],
-        startTime: "12:15",
-        endTime: "14:30",
+        startTime: "12:00",
+        endTime: "14:15",
         during: "2h15m",
         available: true
       },
@@ -328,8 +364,8 @@ var rooms = [
         meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
         participants: ["Дарт Вейдер"],
-        startTime: "14:30",
-        endTime: "17:00",
+        startTime: "14:15",
+        endTime: "16:45",
         during: "2h30m",
         available: false
       },
@@ -337,8 +373,8 @@ var rooms = [
         meetingsName: "",
         date: "14 декабря",
         participants: [],
-        startTime: "17:00",
-        endTime: "20:00",
+        startTime: "16:45",
+        endTime: "19:45",
         during: "3h0m",
         available: true
       },
@@ -346,8 +382,8 @@ var rooms = [
         meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
         participants: ["Дарт Вейдер"],
-        startTime: "20:00",
-        endTime: "22:30",
+        startTime: "19:45",
+        endTime: "22:15",
         during: "2h30m",
         available: false
       },
@@ -355,7 +391,7 @@ var rooms = [
         meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
         participants: ["Дарт Вейдер"],
-        startTime: "22:30",
+        startTime: "22:15",
         endTime: "23:00",
         during: "0h45m",
         available: false
@@ -378,21 +414,12 @@ var rooms = [
         available: false
       },
       {
-        meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
-        participants: ["Дарт Вейдер"],
-        startTime: "10:45",
-        endTime: "12:15",
-        during: "1h30m",
-        available: false
-      },
-      {
         meetingsName: "",
         date: "14 декабря",
         participants: [],
-        startTime: "12:15",
+        startTime: "10:45",
         endTime: "14:30",
-        during: "2h15m",
+        during: "3h45m",
         available: true
       },
       {
@@ -409,17 +436,17 @@ var rooms = [
         date: "14 декабря",
         participants: [],
         startTime: "17:00",
-        endTime: "20:00",
-        during: "3h0m",
+        endTime: "18:45",
+        during: "1h45m",
         available: true
       },
       {
         meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
         participants: ["Дарт Вейдер"],
-        startTime: "20:00",
+        startTime: "18:45",
         endTime: "22:30",
-        during: "2h30m",
+        during: "3h45m",
         available: false
       },
       {
@@ -520,39 +547,39 @@ var rooms = [
         available: false
       },
       {
-        meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
-        participants: ["Дарт Вейдер"],
-        startTime: "10:45",
-        endTime: "12:15",
-        during: "1h30m",
-        available: false
-      },
-      {
         meetingsName: "",
         date: "14 декабря",
         participants: [],
-        startTime: "12:15",
-        endTime: "14:30",
-        during: "2h15m",
+        startTime: "10:45",
+        endTime: "12:15",
+        during: "1h30m",
         available: true
       },
       {
         meetingsName: "Рассуждения о высоком",
         date: "14 декабря",
         participants: ["Дарт Вейдер"],
+        startTime: "12:15",
+        endTime: "14:30",
+        during: "2h15m",
+        available: false
+      },
+      {
+        meetingsName: "Рассуждения о высоком",
+        date: "14 декабря",
+        participants: ["Дарт Вейдер"],
         startTime: "14:30",
-        endTime: "17:00",
-        during: "2h30m",
+        endTime: "18:00",
+        during: "3h30m",
         available: false
       },
       {
         meetingsName: "",
         date: "14 декабря",
         participants: [],
-        startTime: "17:00",
+        startTime: "18:00",
         endTime: "20:00",
-        during: "3h0m",
+        during: "2h0m",
         available: true
       },
       {
