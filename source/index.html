@@ -124,7 +124,21 @@
         </template>
 
         <template id="timeline-item-blocked">
-          <div class="timeline__item timeline__item--blocked"></div>
+          <div class="timeline__item timeline__item--blocked">
+            <div class="timeline__event-data event-data">
+              <p class="event-data__name"></p>
+               <p class="event-data__content">
+                 <span class="event-data__date"></span>,
+                 <span class="event-data__time"></span> ·
+                 <span class="event-data__rooms"></span>
+               </p>
+               <p class="event-data__participants">
+                 <img class="event-data__participant-avatar" src="#" alt="Аватарка участника">
+                 <span class="event-data__participant-name"></span>
+                 <span class="event-data__participants-count"></span>
+               </p>
+            </div>
+          </div>
         </template>
 
       </div>
@@ -217,6 +231,7 @@
   <script src="js/welcome-modal.js"></script>
   <script src="js/floor.js"></script>
   <script src="js/add-meeting-modal.js"></script>
+  <script src="js/show-event-data.js"></script>
 </body>
 
 </html>
