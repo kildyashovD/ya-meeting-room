@@ -1,5 +1,7 @@
 "use strict";
 
+var ESC_KEYCODE = 27;
+
 var timelineEventBlocked = document.querySelectorAll(".timeline__item--blocked");
 
 addListenerToEveryBlockedEvent ();
@@ -30,7 +32,7 @@ function addListenerToEveryBlockedEvent () {
 
         document.addEventListener("keydown", function (evt) {
 
-          if (evt.keyCode === 27) {
+          if (evt.keyCode === ESC_KEYCODE) {
             currentEventData.classList.remove("event-data--show");
           }
         }, false);

@@ -11,3 +11,15 @@
 .page-header__link {
   margin-left: auto;
 }
+
+@media (max-width: @adaptive-width) {
+  .page-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
+  .page-header__link {
+    display: none;
+  }
+}
