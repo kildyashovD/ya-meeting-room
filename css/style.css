@@ -103,6 +103,38 @@ input[type="radio"].visually-hidden {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+@media (max-width: 981px) {
+  .main-content {
+    overflow: scroll;
+  }
+}
+.button {
+  display: inline-block;
+  padding: 10px 16px;
+  font: inherit;
+  vertical-align: middle;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #007dff;
+  border: none;
+  border-radius: 4px;
+}
+.button:hover {
+  background-color: #0059ff;
+}
+.button:active {
+  background-color: rgba(11, 0, 255, 0.8);
+}
+.button--gray {
+  color: #000000;
+  background-color: #e9ecef;
+}
+.button--gray:hover {
+  background-color: #dde0e4;
+}
+.button--gray:active {
+  background-color: #c7cdd3;
+}
 .welcome-modal {
   position: fixed;
   top: 0;
@@ -141,41 +173,28 @@ input[type="radio"].visually-hidden {
           align-items: center;
   padding: 18px 24px 17px 24px;
   height: 71px;
+  background-color: #ffffff;
   border-bottom: 1px solid #e9ecef;
 }
 .page-header__link {
   margin-left: auto;
 }
+@media (max-width: 981px) {
+  .page-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 48px;
+    z-index: 10;
+  }
+  .page-header__link {
+    display: none;
+  }
+}
 .logo {
   display: block;
   max-height: 26px;
-}
-.button {
-  display: inline-block;
-  padding: 10px 16px;
-  font: inherit;
-  vertical-align: middle;
-  color: #ffffff;
-  cursor: pointer;
-  background-color: #007dff;
-  border: none;
-  border-radius: 4px;
-}
-.button:hover {
-  background-color: #0059ff;
-}
-.button:active {
-  background-color: rgba(11, 0, 255, 0.8);
-}
-.button--gray {
-  color: #000000;
-  background-color: #e9ecef;
-}
-.button--gray:hover {
-  background-color: #dde0e4;
-}
-.button--gray:active {
-  background-color: #c7cdd3;
 }
 .diagram-date {
   display: -webkit-box;
@@ -190,7 +209,19 @@ input[type="radio"].visually-hidden {
 .diagram-date__actually-date {
   width: 245px;
 }
+@media (max-width: 981px) {
+  .diagram-date {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+    border: none;
+  }
+}
 .diagram-time {
+  margin: 0;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,8 +231,6 @@ input[type="radio"].visually-hidden {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
 .diagram-time__hours {
@@ -220,6 +249,23 @@ input[type="radio"].visually-hidden {
   border-left: 1px solid rgba(19, 100, 205, 0.1);
   z-index: 1;
 }
+@media (max-width: 981px) {
+  .diagram-time {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 32px;
+    padding-left: 215px;
+    min-width: 800px;
+    margin-top: 57px;
+    border-bottom: 1px solid #e9ecef;
+    z-index: 9;
+  }
+  .diagram-time__hours::before {
+    top: 28px;
+    height: calc(100vh - 105px);
+  }
+}
 .diagram-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -227,6 +273,12 @@ input[type="radio"].visually-hidden {
 }
 .diagram-content--close {
   display: none;
+}
+@media (max-width: 981px) {
+  .diagram-content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 .meeting-rooms {
   -webkit-box-sizing: border-box;
@@ -289,6 +341,34 @@ input[type="radio"].visually-hidden {
   margin: 0;
   font-size: 13px;
   line-height: 17px;
+}
+@media (max-width: 981px) {
+  .meeting-rooms {
+    width: 100%;
+    min-width: 1015px;
+    padding: 0;
+    background-image: none;
+  }
+  .meeting-rooms__item {
+    margin-bottom: 0;
+  }
+  .meeting-rooms__data {
+    margin-bottom: 0;
+    border-bottom: 1px solid #e9ecef;
+  }
+  .meeting-rooms__text-content {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 181px;
+    min-width: inherit;
+    padding: 12px 25px 12px 16px;
+    background-color: #ffffff;
+  }
+  .meeting-rooms__floor {
+    margin: 0;
+    padding: 16px 16px 8px 16px;
+    border-bottom: 1px solid #e9ecef;
+  }
 }
 .meeting-time {
   -webkit-box-flex: 1;
@@ -354,6 +434,19 @@ input[type="radio"].visually-hidden {
   text-align: center;
   background-color: #007dff;
   border-radius: 2px;
+}
+@media (max-width: 981px) {
+  .timeline {
+    min-width: 800px;
+    padding-left: 5.8%;
+    padding-right: 2.5%;
+  }
+  .timeline__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+  }
 }
 .timeline__item--0h0m {
   width: 0%;
@@ -614,6 +707,17 @@ input[type="radio"].visually-hidden {
 .actually-date__next:active {
   background-color: rgba(4, 29, 56, 0.14);
 }
+@media (max-width: 981px) {
+  .actually-date {
+    height: 56px;
+    width: 100%;
+    position: fixed;
+    top: 48px;
+    background-color: #ffffff;
+    z-index: 10;
+    border-bottom: 1px solid #e9ecef;
+  }
+}
 .new-meeting {
   display: none;
   position: relative;
@@ -672,6 +776,12 @@ input[type="radio"].visually-hidden {
 .new-meeting__close:hover::after {
   background-color: #000000;
 }
+@media (max-width: 981px) {
+  .new-meeting__wrapper {
+    width: 92.2%;
+    margin: auto;
+  }
+}
 .add-meeting-form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -681,6 +791,11 @@ input[type="radio"].visually-hidden {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: calc(100vh - 157px);
+}
+.add-meeting-form__wrapper {
+  position: relative;
+  width: 878px;
+  margin: 0 auto;
 }
 .add-meeting-form__main {
   display: -webkit-box;
@@ -704,6 +819,7 @@ input[type="radio"].visually-hidden {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   width: 420px;
   margin: 0;
   margin-bottom: 24px;
@@ -754,6 +870,55 @@ input[type="radio"].visually-hidden {
 }
 .add-meeting-form__submit {
   margin-right: auto;
+}
+@media (max-width: 981px) {
+  .add-meeting-form__main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .add-meeting-form__wrapper {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    margin: auto;
+    padding: 0 3.8%;
+  }
+  .add-meeting-form__item {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+  }
+  .add-meeting-form__item--line-devider-mob {
+    margin-bottom: 44px;
+  }
+  .add-meeting-form__item--line-devider-mob::after {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 8px;
+    bottom: -28px;
+    left: -4%;
+    background-color: #e9ecef;
+  }
+  .add-meeting-form__container--dates-margin {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+  .add-meeting-form__container--times-margin {
+    margin-right: 22px;
+  }
+  .add-meeting-form__container--dates-mob-width-l {
+    width: 100%;
+  }
+  .add-meeting-form__container input {
+    height: 44px;
+  }
+  .add-meeting-form__footer {
+    padding: 16px 3.8% 20px 0;
+    text-align: right;
+  }
 }
 .recommended-rooms {
   display: -webkit-box;
