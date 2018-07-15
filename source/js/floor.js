@@ -734,7 +734,7 @@ function generateMeetingRoomsTemplate (i) {
 function generateTimelineTemplate (k, meetingRoomsCount) {
 
   for (var j = 0; j < rooms[k].meetings.length; j++) {
-    //debugger;
+
     var timelineFree = eventFree.content.cloneNode("true");
     var timelineBlocked = eventBlocked.content.cloneNode("true");
     var timelineDuringTime = rooms[k].meetings[j].during;

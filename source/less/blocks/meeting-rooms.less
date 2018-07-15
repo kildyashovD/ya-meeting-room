@@ -76,3 +76,39 @@
   font-size: 13px;
   line-height: 17px;
 }
+
+@media (max-width: @adaptive-width) {
+  .meeting-rooms {
+    width: 100%;
+    min-width: 1015px;
+    padding: 0;
+
+    background-image: none;
+  }
+
+  .meeting-rooms__item {
+    margin-bottom: 0;
+  }
+
+  .meeting-rooms__data {
+    margin-bottom: 0;
+
+    border-bottom: 1px solid rgba(233, 236, 239, 1);
+  }
+
+  .meeting-rooms__text-content {
+    box-sizing: border-box;
+    width: 181px;
+    min-width: inherit;
+    padding: 12px 25px 12px 16px;
+
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  .meeting-rooms__floor {
+    margin: 0;
+    padding: 16px 16px 8px 16px;
+
+    border-bottom: 1px solid rgba(233, 236, 239, 1);
+  }
+}

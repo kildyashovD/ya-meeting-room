@@ -78,7 +78,8 @@
           </ul>
         </div>
       </div>
-      <ul class="diagram-date__time diagram-time">
+
+      <ul class="diagram-time">
         <li class="diagram-time__hours diagram-time__hours--disabled">8:00</li>
         <li class="diagram-time__hours diagram-time__hours--disabled">9</li>
         <li class="diagram-time__hours diagram-time__hours--disabled">10</li>
@@ -99,6 +100,7 @@
     </section>
 
     <section class="diagram-content">
+
       <div class="diagram-content__meeting-rooms meeting-rooms">
 
         <template id="floor-template" style="display: none">
@@ -152,29 +154,29 @@
       </div>
 
       <form class="new-meeting__form add-meeting-form" action="#">
-        <div class="new-meeting__wrapper">
+        <div class="add-meeting-form__wrapper">
           <div class="add-meeting-form__main">
             <div class="add-meeting-form__item">
               <div class="add-meeting-form__container">
                 <label class="add-meeting-form__heading" for="meeting-them">Тема</label>
-                <input class="add-meeting-form__theme" type="text" name="theme" id="meeting-theme" placeholder="О чем будем говорить?">
+                <input class="add-meeting-form__theme" type="text" name="theme" id="meeting-theme" placeholder="О чем будем говорить?" required>
               </div>
             </div>
-            <div class="add-meeting-form__item">
-              <div class="add-meeting-form__container add-meeting-form__container--dates-margin">
+            <div class="add-meeting-form__item add-meeting-form__item--line-devider-mob">
+              <div class="add-meeting-form__container add-meeting-form__container--dates-margin add-meeting-form__container--dates-mob-width-l">
                 <label class="add-meeting-form__heading" for="meeting-date">Даты</label>
-                <input class="add-meeting-form__date" name="date" id="meeting-date" type="date">
+                <input class="add-meeting-form__date" name="date" id="meeting-date" type="date" required>
               </div>
-              <div class="add-meeting-form__container add-meeting-form__container--times-margin">
+              <div class="add-meeting-form__container add-meeting-form__container--times-margin add-meeting-form__container--dates-mob-width-s">
                 <label class="add-meeting-form__heading" for="meeting-start-time">Начало</label>
-                <input class="add-meeting-form__time" name="start-time" id="meeting-start-time" type="time">
+                <input class="add-meeting-form__time" name="start-time" id="meeting-start-time" type="time" required>
               </div>
-              <div class="add-meeting-form__container">
+              <div class="add-meeting-form__container add-meeting-form__container--dates-mob-width-s">
                 <label class="add-meeting-form__heading" for="meeting-end-time">Конец</label>
-                <input class="add-meeting-form__time" name="end-time" id="meeting-end-time" type="time">
+                <input class="add-meeting-form__time" name="end-time" id="meeting-end-time" type="time" required>
               </div>
             </div>
-            <div class="add-meeting-form__item">
+            <div class="add-meeting-form__item add-meeting-form__item--line-devider-mob">
               <div class="add-meeting-form__container">
                 <label class="add-meeting-form__heading" for="">Участники</label>
                 <input class="add-meeting-form__participants" type="text" placeholder="Например, Тор Одинович">
@@ -203,19 +205,19 @@
                 <span class="recommended-rooms__name">Готем</span> ·
                 <span class="recommended-rooms__floor">4 этаж</span>
               </label>
-              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem">
+              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem" required>
               <label class="recommended-rooms__item" for="recommended-rooms-gotem">
                 <span class="recommended-rooms__time">16:00-16:30</span>
                 <span class="recommended-rooms__name">Поле непаханное</span> ·
                 <span class="recommended-rooms__floor">4 этаж</span>
               </label>
-              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem">
+              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem" required>
               <label class="recommended-rooms__item" for="recommended-rooms-gotem">
                 <span class="recommended-rooms__time">16:00-16:30</span>
                 <span class="recommended-rooms__name">Темная башня</span> ·
                 <span class="recommended-rooms__floor">4 этаж</span>
               </label>
-              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem">
+              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem" required>
             </div>
           </div>
         </div>

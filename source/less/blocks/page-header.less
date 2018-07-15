@@ -5,9 +5,25 @@
   padding: 18px 24px 17px 24px;
   height: 71px;
 
+  background-color: #ffffff;
   border-bottom: 1px solid rgba(233, 236, 239, 1);
 }
 
 .page-header__link {
   margin-left: auto;
+}
+
+@media (max-width: @adaptive-width) {
+  .page-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 48px;
+
+    z-index: 10;
+  }
+
+  .page-header__link {
+    display: none;
+  }
 }
