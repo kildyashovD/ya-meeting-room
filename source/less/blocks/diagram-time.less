@@ -1,9 +1,9 @@
 .diagram-time {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-grow: 1;
   align-items: center;
-  margin: 0;
-  padding: 0;
 
   list-style: none;
 }
@@ -30,10 +30,22 @@
 
 @media (max-width: @adaptive-width) {
   .diagram-time {
+    position: sticky;
+    top: 0;
     height: 32px;
     padding-left: 215px;
     min-width: 800px;
+    margin-top: 57px;
 
     border-bottom: 1px solid #e9ecef;
+
+    z-index: 9;
+  }
+
+  .diagram-time__hours {
+    &::before {
+      top: 28px;
+      height: ~"calc(100vh - 105px)";
+    }
   }
 }

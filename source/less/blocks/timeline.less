@@ -49,12 +49,6 @@
   }
 }
 
-@media (max-width: @adaptive-width) {
-  .timeline {
-    min-width: 800px;
-  }
-}
-
 .timeline__add-event {
   display: none;
 
@@ -73,6 +67,19 @@
   background-color: #007dff;
 
   border-radius: 2px;
+}
+
+@media (max-width: @adaptive-width) {
+  .timeline {
+    min-width: 800px;
+    padding-left: 5.8%;
+    padding-right: 2.5%;
+  }
+
+  .timeline__item {
+    display: flex;
+    height: auto;
+  }
 }
 
 .timeline__item--0h0m {
