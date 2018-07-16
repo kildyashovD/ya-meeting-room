@@ -972,6 +972,10 @@ input[type="radio"].visually-hidden {
     height: 44px;
     background-color: #ffffff;
   }
+  .add-meeting-form__container ::-webkit-datetime-edit {
+    width: 100%;
+    background-color: #ffffff;
+  }
   .add-meeting-form__footer {
     padding: 16px 3.8% 20px 0;
     text-align: right;
