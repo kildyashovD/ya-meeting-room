@@ -33,7 +33,7 @@ function addListenerToEveryTimelineButton () {
 function addNewMeetingModal (evt) {
   evt.preventDefault();
 
-  newMeetingOpenModalButton.style.display = "none";
+  newMeetingOpenModalButton.classList.add("page-header__link--hide");
 
   diagramDate.classList.add("diagram-date--close");
 
@@ -51,5 +51,5 @@ function closeNewMeetingModal (evt) {
 
   diagramContent.classList.remove("diagram-content--close");
 
-  newMeetingOpenModalButton.style.display = "block";
+  newMeetingOpenModalButton.classList.remove("page-header__link--hide");
 };

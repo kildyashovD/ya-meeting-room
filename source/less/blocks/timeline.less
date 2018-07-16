@@ -34,13 +34,13 @@
     background-color: #d5dfe9;
 
     &:hover {
-      z-index: 2;
+      z-index: 9;
 
       background-color: #98a9b9;
     }
 
     &:active {
-      z-index: 2;
+      z-index: 9;
 
       background-color: #000000;
 
@@ -79,6 +79,10 @@
   .timeline__item {
     display: flex;
     height: auto;
+
+    &--blocked:hover {
+      z-index: auto;
+    }
   }
 }
 
