@@ -31,6 +31,7 @@ function addListenerToEveryTimelineButton () {
 }
 
 function addNewMeetingModal (evt) {
+
   evt.preventDefault();
 
   newMeetingOpenModalButton.classList.add("page-header__link--hide");
@@ -43,7 +44,6 @@ function addNewMeetingModal (evt) {
 }
 
 function closeNewMeetingModal (evt) {
-  evt.preventDefault();
 
   newMeeting.classList.remove("new-meeting--show");
 

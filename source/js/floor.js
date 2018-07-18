@@ -710,7 +710,7 @@ function generateFloorsTemplate () {
 };
 
 function generateMeetingRoomsTemplate (i) {
-  //debugger;
+
   for (var k = 0; k < rooms.length; k++) {
 
     var roomsElement = meetingRoomsTemplate.content.cloneNode("true");
@@ -740,10 +740,15 @@ function generateTimelineTemplate (k, meetingRoomsCount) {
     var timelineDuringTime = rooms[k].meetings[j].during;
 
     if(rooms[k].meetings[j].available) {
+
       timelineFree.querySelector(".timeline__item").classList.add("timeline__item--" + timelineDuringTime);
 
+      setFreeEventDataAttr (timelineFree, k, j);
+
       meetingRoomsListElement.querySelectorAll(".timeline")[meetingRoomsCount - 1].appendChild(timelineFree);
+
     } else {
+
       timelineBlocked.querySelector(".timeline__item").classList.add("timeline__item--" + timelineDuringTime);
 
       timelineBlocked.querySelector(".event-data__name").textContent = rooms[k].meetings[j].meetingsName;
@@ -772,3 +777,9 @@ function generateTimelineTemplate (k, meetingRoomsCount) {
     }
   }
 }
+
+function setFreeEventDataAttr (currentElement, k, j) {
+  currentElement.querySelector(".timeline__item").setAttribute("data-event-date", rooms[k].meetings[j].date);
+  currentElement.querySelector(".timeline__item").setAttribute("data-event-start", rooms[k].meetings[j].startTime);
+  currentElement.querySelector(".timeline__item").setAttribute("data-event-end", rooms[k].meetings[j].endTime);
+};
