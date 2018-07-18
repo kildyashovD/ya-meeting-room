@@ -779,7 +779,7 @@ function generateTimelineTemplate (k, meetingRoomsCount) {
 }
 
 function setFreeEventDataAttr (currentElement, k, j) {
-  currentElement.querySelector(".timeline__item").setAttribute("data-event-date", rooms[k].meetings[j].date);
-  currentElement.querySelector(".timeline__item").setAttribute("data-event-start", rooms[k].meetings[j].startTime);
-  currentElement.querySelector(".timeline__item").setAttribute("data-event-end", rooms[k].meetings[j].endTime);
+  currentElement.querySelector(".timeline__add-event").setAttribute("data-event-date", rooms[k].meetings[j].date);
+  currentElement.querySelector(".timeline__add-event").setAttribute("data-event-start", rooms[k].meetings[j].startTime);
+  currentElement.querySelector(".timeline__add-event").setAttribute("data-event-end", rooms[k].meetings[j].endTime);
 };
