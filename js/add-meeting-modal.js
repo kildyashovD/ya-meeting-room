@@ -28,10 +28,13 @@ function addListenerToEveryTimelineButton () {
       addNewMeetingModal (evt);
     });
   }
-}
+};
 
 function addNewMeetingModal (evt) {
+
   evt.preventDefault();
+
+  var elementTarget = evt.target;
 
   newMeetingOpenModalButton.classList.add("page-header__link--hide");
 
@@ -40,10 +43,26 @@ function addNewMeetingModal (evt) {
   diagramContent.classList.add("diagram-content--close");
 
   newMeeting.classList.add("new-meeting--show");
-}
+
+  setDataForm (elementTarget);
+
+};
+
+function setDataForm (currentElement) {
+  var eventDate = currentElement.getAttribute("data-event-date");
+  var startTime = currentElement.getAttribute("data-event-start");
+  var endTime = currentElement.getAttribute("data-event-end");
+  var eventDateForm = document.getElementById("meeting-date");
+  var eventStartTimeForm = document.getElementById("meeting-start-time");
+  var eventEndTimeForm = document.getElementById("meeting-end-time");
+
+  eventDateForm.setAttribute("value", eventDate);
+  eventStartTimeForm.setAttribute("value", startTime);
+  eventEndTimeForm.setAttribute("value", endTime);
+
+};
 
 function closeNewMeetingModal (evt) {
-  evt.preventDefault();
 
   newMeeting.classList.remove("new-meeting--show");
 

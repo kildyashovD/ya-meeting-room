@@ -710,7 +710,7 @@ function generateFloorsTemplate () {
 };
 
 function generateMeetingRoomsTemplate (i) {
-  //debugger;
+
   for (var k = 0; k < rooms.length; k++) {
 
     var roomsElement = meetingRoomsTemplate.content.cloneNode("true");
@@ -726,12 +726,12 @@ function generateMeetingRoomsTemplate (i) {
 
       meetingRoomsCount = meetingRoomsListElement.querySelectorAll(".timeline").length;
 
-      generateTimelineTemplate (k, meetingRoomsCount);
+      generateTimelineTemplate (i, k, meetingRoomsCount);
     }
   }
 };
 
-function generateTimelineTemplate (k, meetingRoomsCount) {
+function generateTimelineTemplate (i, k, meetingRoomsCount) {
 
   for (var j = 0; j < rooms[k].meetings.length; j++) {
 
@@ -740,10 +740,15 @@ function generateTimelineTemplate (k, meetingRoomsCount) {
     var timelineDuringTime = rooms[k].meetings[j].during;
 
     if(rooms[k].meetings[j].available) {
+
       timelineFree.querySelector(".timeline__item").classList.add("timeline__item--" + timelineDuringTime);
 
+      setFreeEventDataAttr (timelineFree, k, j, i);
+
       meetingRoomsListElement.querySelectorAll(".timeline")[meetingRoomsCount - 1].appendChild(timelineFree);
+
     } else {
+
       timelineBlocked.querySelector(".timeline__item").classList.add("timeline__item--" + timelineDuringTime);
 
       timelineBlocked.querySelector(".event-data__name").textContent = rooms[k].meetings[j].meetingsName;
@@ -772,3 +777,12 @@ function generateTimelineTemplate (k, meetingRoomsCount) {
     }
   }
 }
+
+function setFreeEventDataAttr (currentElement, k, j, i) {
+  currentElement.querySelector(".timeline__add-event").setAttribute("data-event-date", rooms[k].meetings[j].date);
+  currentElement.querySelector(".timeline__add-event").setAttribute("data-event-start", rooms[k].meetings[j].startTime);
+  currentElement.querySelector(".timeline__add-event").setAttribute("data-event-end", rooms[k].meetings[j].endTime);
+  currentElement.querySelector(".timeline__add-event").setAttribute("data-event-room", rooms[k].name);
+  currentElement.querySelector(".timeline__add-event").setAttribute("data-event-floor", floors[i]);
+
+};

@@ -298,6 +298,7 @@ input[type="radio"].visually-hidden {
   display: none;
 }
 .meeting-rooms__floor {
+  position: relative;
   margin: 0;
   margin-bottom: 8px;
   font-size: 11px;
@@ -387,9 +388,17 @@ input[type="radio"].visually-hidden {
     position: sticky;
     left: 0;
     margin: 0;
-    padding: 16px 16px 8px 16px;
-    border-bottom: 1px solid #e9ecef;
+    padding: 16px 16px 10px 16px;
     z-index: 9;
+  }
+  .meeting-rooms__floor::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    border-bottom: 1px solid #e9ecef;
   }
   .meeting-rooms__text-content {
     -webkit-box-sizing: border-box;
@@ -501,6 +510,12 @@ input[type="radio"].visually-hidden {
   }
   .timeline__item--blocked:hover {
     z-index: auto;
+  }
+  .timeline__add-event {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100%;
+    padding-top: 16px;
   }
 }
 .timeline__item--0h0m {
@@ -799,6 +814,7 @@ input[type="radio"].visually-hidden {
   right: 0;
   width: 24px;
   height: 24px;
+  border: none;
   font-size: 0;
   background-color: #e9ecef;
   border-radius: 50%;
@@ -903,18 +919,29 @@ input[type="radio"].visually-hidden {
 .add-meeting-form__container--times-margin {
   margin-right: 22px;
 }
+.add-meeting-form__container--dates-mob-width-l {
+  width: 238px;
+}
+.add-meeting-form__container--dates-mob-width-s {
+  width: 72px;
+}
 .add-meeting-form__container input {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  width: 100%;
   height: 38px;
   padding: 10px 11px;
   font-family: inherit;
   font-size: 13px;
-  color: #858e98;
+  color: #000000;
   letter-spacing: 0.47px;
   line-height: 15px;
   border: 2px solid #e9ecef;
   border-radius: 4px;
+}
+.add-meeting-form__container input:focus {
+  border-color: #007dff;
+  outline: none;
 }
 .add-meeting-form__participants {
   margin-bottom: 12px;
@@ -964,17 +991,13 @@ input[type="radio"].visually-hidden {
   .add-meeting-form__container--times-margin {
     margin-right: 22px;
   }
-  .add-meeting-form__container--dates-mob-width-l {
-    width: 100%;
-  }
   .add-meeting-form__container input {
     width: 100%;
     height: 44px;
     background-color: #ffffff;
   }
-  .add-meeting-form__container ::-webkit-datetime-edit {
-    width: 100%;
-    background-color: #ffffff;
+  .add-meeting-form__container--dates-mob-width-s {
+    width: 153px;
   }
   .add-meeting-form__footer {
     padding: 16px 3.8% 20px 0;

@@ -14,6 +14,7 @@ function addListenerToEveryBlockedEvent () {
 
       var currentTimeline = this;
       var currentEventData = this.querySelector(".event-data");
+      var removeClass = "event-data--show";
 
       if (currentEventData.classList.contains("event-data--show")) {
 
@@ -23,20 +24,25 @@ function addListenerToEveryBlockedEvent () {
 
         currentEventData.classList.add("event-data--show");
 
-        window.addEventListener("click", function (evt) {
+        closeElementWindowClick (currentTimeline, currentEventData, removeClass);
 
-          if (evt.target !== currentTimeline) {
-            currentEventData.classList.remove("event-data--show");
-          }
-        }, false);
-
-        document.addEventListener("keydown", function (evt) {
-
-          if (evt.keyCode === ESC_KEYCODE) {
-            currentEventData.classList.remove("event-data--show");
-          }
-        }, false);
       }
     }, false);
   }
+};
+
+function closeElementWindowClick (currentElement, currentSelector, removeClass) {
+  window.addEventListener("click", function(evt) {
+
+    if (evt.target !== currentElement) {
+      currentSelector.classList.remove(removeClass);
+    }
+  }, false);
+
+  document.addEventListener("keydown", function (evt) {
+
+    if (evt.keyCode === ESC_KEYCODE) {
+      currentSelector.classList.remove(removeClass);
+    }
+  }, false);
 };
