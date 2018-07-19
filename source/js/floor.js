@@ -726,12 +726,12 @@ function generateMeetingRoomsTemplate (i) {
 
       meetingRoomsCount = meetingRoomsListElement.querySelectorAll(".timeline").length;
 
-      generateTimelineTemplate (k, meetingRoomsCount);
+      generateTimelineTemplate (i, k, meetingRoomsCount);
     }
   }
 };
 
-function generateTimelineTemplate (k, meetingRoomsCount) {
+function generateTimelineTemplate (i, k, meetingRoomsCount) {
 
   for (var j = 0; j < rooms[k].meetings.length; j++) {
 
@@ -743,7 +743,7 @@ function generateTimelineTemplate (k, meetingRoomsCount) {
 
       timelineFree.querySelector(".timeline__item").classList.add("timeline__item--" + timelineDuringTime);
 
-      setFreeEventDataAttr (timelineFree, k, j);
+      setFreeEventDataAttr (timelineFree, k, j, i);
 
       meetingRoomsListElement.querySelectorAll(".timeline")[meetingRoomsCount - 1].appendChild(timelineFree);
 
@@ -778,8 +778,11 @@ function generateTimelineTemplate (k, meetingRoomsCount) {
   }
 }
 
-function setFreeEventDataAttr (currentElement, k, j) {
+function setFreeEventDataAttr (currentElement, k, j, i) {
   currentElement.querySelector(".timeline__add-event").setAttribute("data-event-date", rooms[k].meetings[j].date);
   currentElement.querySelector(".timeline__add-event").setAttribute("data-event-start", rooms[k].meetings[j].startTime);
   currentElement.querySelector(".timeline__add-event").setAttribute("data-event-end", rooms[k].meetings[j].endTime);
+  currentElement.querySelector(".timeline__add-event").setAttribute("data-event-room", rooms[k].name);
+  currentElement.querySelector(".timeline__add-event").setAttribute("data-event-floor", floors[i]);
+
 };
