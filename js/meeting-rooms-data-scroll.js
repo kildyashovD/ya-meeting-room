@@ -2,15 +2,21 @@
 
 var scrollElement = document.querySelector(".main-content");
 var roomTextData = document.querySelectorAll(".meeting-rooms__text-content");
-var roomSize = document.querySelectorAll(".meeting-rooms__size");
+var roomsName = document.querySelectorAll(".meeting-rooms__name");
 
 scrollElement.addEventListener("scroll", function () {
-
-    for (var i = 0; i < roomSize.length; i++)
-    roomSize[i].classList.toggle("meeting-rooms__size--hide", scrollElement.scrollLeft > 50);
-
-    for (var j = 0; j < roomTextData.length; j++) {
-      roomTextData[j].classList.toggle("meeting-rooms__text-content--mob-scroll", scrollElement.scrollLeft > 50);
-    }
-
+  roomsOnScroll (roomsName);
 }, false);
+
+function roomsOnScroll (e) {
+  if (scrollElement.scrollLeft > 140) {
+    for (var i = 0; i < e.length; i++) {
+      e[i].classList.add("meeting-rooms__name--mob-scroll-js");
+      e[i].style.left = scrollElement.scrollLeft + 12 + "px";
+    }
+  } else {
+    for (var k = 0; k < e.length; k++) {
+      e[k].classList.contains("meeting-rooms__name--mob-scroll-js") && e[k].classList.remove("meeting-rooms__name--mob-scroll-js");
+    }
+  }
+};
