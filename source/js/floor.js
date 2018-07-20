@@ -1,5 +1,19 @@
 "use strict";
 
+//Устанавливает текущую дату
+
+var today = new Date();
+var dateOptions = {
+  day: "numeric",
+  month: "short"
+}
+
+var currentDateText = today.toLocaleString("ru", dateOptions);
+currentDateText = currentDateText.slice(0, currentDateText.length - 1);
+
+var currentDateElement = document.querySelector(".actually-date__day-value");
+currentDateElement.textContent = (currentDateText + " · Сегодня");
+
 var floorsTemplate = document.querySelector("#floor-template");
 var meetingRoomsTemplate = document.querySelector("#meeting-rooms-template");
 var meetingRoomsListElement = document.querySelector(".meeting-rooms");
@@ -33,7 +47,7 @@ var rooms = [
     meetings: [
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[1], workers[0]],
         startTime: "08:00",
         endTime: "11:15",
@@ -42,7 +56,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0], workers[1], workers[0], workers[1], workers[0], workers[1], workers[0]],
         startTime: "11:15",
         endTime: "12:15",
@@ -51,7 +65,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "12:15",
         endTime: "13:30",
@@ -60,7 +74,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "14:30",
         endTime: "17:00",
@@ -69,7 +83,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "17:00",
         endTime: "20:00",
@@ -78,7 +92,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "20:00",
         endTime: "22:30",
@@ -87,7 +101,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "22:30",
         endTime: "23:00",
@@ -104,7 +118,7 @@ var rooms = [
     meetings: [
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "08:00",
         endTime: "10:45",
@@ -113,7 +127,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "10:45",
         endTime: "12:15",
@@ -122,7 +136,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "12:15",
         endTime: "13:00",
@@ -131,7 +145,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "13:00",
         endTime: "14:00",
@@ -140,7 +154,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "14:00",
         endTime: "14:45",
@@ -149,7 +163,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "14:45",
         endTime: "17:00",
@@ -158,7 +172,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "17:00",
         endTime: "17:45",
@@ -167,7 +181,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "17:45",
         endTime: "18:15",
@@ -176,7 +190,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "18:15",
         endTime: "20:00",
@@ -185,7 +199,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "20:00",
         endTime: "22:30",
@@ -194,7 +208,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "22:30",
         endTime: "23:00",
@@ -211,7 +225,7 @@ var rooms = [
     meetings: [
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "08:00",
         endTime: "10:45",
@@ -220,7 +234,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "10:45",
         endTime: "12:00",
@@ -229,7 +243,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "12:00",
         endTime: "14:30",
@@ -238,7 +252,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "14:30",
         endTime: "17:00",
@@ -247,7 +261,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "17:00",
         endTime: "20:00",
@@ -256,7 +270,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "20:00",
         endTime: "22:30",
@@ -265,7 +279,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "22:30",
         endTime: "23:00",
@@ -282,7 +296,7 @@ var rooms = [
     meetings: [
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "08:00",
         endTime: "10:45",
@@ -291,7 +305,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "10:45",
         endTime: "12:15",
@@ -300,7 +314,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "12:15",
         endTime: "14:30",
@@ -309,7 +323,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "14:30",
         endTime: "17:00",
@@ -318,7 +332,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "17:00",
         endTime: "20:00",
@@ -327,7 +341,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "20:00",
         endTime: "22:30",
@@ -336,7 +350,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "22:30",
         endTime: "23:00",
@@ -353,7 +367,7 @@ var rooms = [
     meetings: [
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0], "Человек паук", "Железный человек"],
         startTime: "08:00",
         endTime: "9:45",
@@ -362,7 +376,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "9:45",
         endTime: "12:00",
@@ -371,7 +385,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "12:00",
         endTime: "14:15",
@@ -380,7 +394,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "14:15",
         endTime: "16:45",
@@ -389,7 +403,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "16:45",
         endTime: "19:45",
@@ -398,7 +412,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "19:45",
         endTime: "22:15",
@@ -407,7 +421,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "22:15",
         endTime: "23:00",
@@ -424,7 +438,7 @@ var rooms = [
     meetings: [
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "08:00",
         endTime: "10:45",
@@ -433,7 +447,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "10:45",
         endTime: "14:30",
@@ -442,7 +456,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "14:30",
         endTime: "17:00",
@@ -451,7 +465,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "17:00",
         endTime: "18:45",
@@ -460,7 +474,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "18:45",
         endTime: "22:30",
@@ -469,7 +483,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "22:30",
         endTime: "23:00",
@@ -486,7 +500,7 @@ var rooms = [
     meetings: [
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "08:00",
         endTime: "10:45",
@@ -495,7 +509,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "10:45",
         endTime: "12:15",
@@ -504,7 +518,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "12:15",
         endTime: "14:30",
@@ -513,7 +527,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "14:30",
         endTime: "17:00",
@@ -522,7 +536,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "17:00",
         endTime: "20:00",
@@ -531,7 +545,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "20:00",
         endTime: "22:30",
@@ -540,7 +554,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "22:30",
         endTime: "23:00",
@@ -557,7 +571,7 @@ var rooms = [
     meetings: [
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "08:00",
         endTime: "10:45",
@@ -566,7 +580,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "10:45",
         endTime: "12:15",
@@ -575,7 +589,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "12:15",
         endTime: "14:30",
@@ -584,7 +598,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "14:30",
         endTime: "18:00",
@@ -593,7 +607,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "18:00",
         endTime: "20:00",
@@ -602,7 +616,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "20:00",
         endTime: "22:30",
@@ -611,7 +625,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "22:30",
         endTime: "23:00",
@@ -628,7 +642,7 @@ var rooms = [
     meetings: [
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "08:00",
         endTime: "10:45",
@@ -637,7 +651,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "10:45",
         endTime: "12:15",
@@ -646,7 +660,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "12:15",
         endTime: "14:30",
@@ -655,7 +669,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "14:30",
         endTime: "17:00",
@@ -664,7 +678,7 @@ var rooms = [
       },
       {
         meetingsName: "",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [],
         startTime: "17:00",
         endTime: "20:00",
@@ -673,7 +687,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "20:00",
         endTime: "22:30",
@@ -682,7 +696,7 @@ var rooms = [
       },
       {
         meetingsName: "Рассуждения о высоком",
-        date: "14 декабря",
+        date: currentDateText,
         participants: [workers[0]],
         startTime: "22:30",
         endTime: "23:00",
