@@ -7,20 +7,29 @@ var diagramDate = document.querySelector(".diagram-date");
 var diagramContent = document.querySelector(".diagram-content");
 var newMeetingCloseModalButton = document.querySelector(".new-meeting__close");
 var buttonAddEventFromTimeline = document.querySelectorAll(".timeline__add-event");
+var eventDateForm = document.getElementById("meeting-date");
+var eventStartTimeForm = document.getElementById("meeting-start-time");
+var eventEndTimeForm = document.getElementById("meeting-end-time");
 
+// Открывает окно создания Новой встречи
+// Через нажатие на кнопку "Создать встречу"
 newMeetingOpenModalButton.addEventListener("click", function (evt) {
-  addNewMeetingModal(evt);
+
+  evt.preventDefault();
+
+  var elementTarget = evt.target;
+
+  addNewMeetingModule (elementTarget);
+
 }, false);
 
-formCloseModalButton.addEventListener("click", function (evt) {
-  closeNewMeetingModal (evt);
-}, false);
-
-newMeetingCloseModalButton.addEventListener("click", function (evt) {
-  closeNewMeetingModal (evt);
-}, false);
+// Открывает окно создания Новой встречи
+// С помощью нажатия на один из свободных слотов с переговорками
 
 addListenerToEveryTimelineButton();
+
+// Но сперва делаем цикл, который добавляет
+// Обработчик событий для всех свободных слотов в timeline
 
 function addListenerToEveryTimelineButton () {
   for (var i = 0; i < buttonAddEventFromTimeline.length; i++) {
@@ -30,12 +39,34 @@ function addListenerToEveryTimelineButton () {
   }
 };
 
+// Закрываем модалку новой встречи
+// Через крестик
+
+newMeetingCloseModalButton.addEventListener("click", function (evt) {
+  closeNewMeetingModal (evt);
+}, false);
+
+// Закрываем модалку новой встречи
+// Через кнопку Отмена
+
+formCloseModalButton.addEventListener("click", function (evt) {
+  closeNewMeetingModal (evt);
+}, false);
+
+//Далее идет функциядля открытия Модалки новой встречи
+
 function addNewMeetingModal (evt) {
 
   evt.preventDefault();
 
   var elementTarget = evt.target;
 
+  addNewMeetingModule (elementTarget);
+
+  setDataForm (elementTarget);
+};
+
+function addNewMeetingModule (elementTarget) {
   newMeetingOpenModalButton.classList.add("page-header__link--hide");
 
   diagramDate.classList.add("diagram-date--close");
@@ -43,18 +74,12 @@ function addNewMeetingModal (evt) {
   diagramContent.classList.add("diagram-content--close");
 
   newMeeting.classList.add("new-meeting--show");
-
-  setDataForm (elementTarget);
-
 };
 
 function setDataForm (currentElement) {
   var eventDate = currentElement.getAttribute("data-event-date");
   var startTime = currentElement.getAttribute("data-event-start");
   var endTime = currentElement.getAttribute("data-event-end");
-  var eventDateForm = document.getElementById("meeting-date");
-  var eventStartTimeForm = document.getElementById("meeting-start-time");
-  var eventEndTimeForm = document.getElementById("meeting-end-time");
 
   eventDateForm.setAttribute("value", eventDate);
   eventStartTimeForm.setAttribute("value", startTime);
@@ -71,4 +96,7 @@ function closeNewMeetingModal (evt) {
   diagramContent.classList.remove("diagram-content--close");
 
   newMeetingOpenModalButton.classList.remove("page-header__link--hide");
+
+  eventStartTimeForm.setAttribute("value", "00:00");
+  eventEndTimeForm.setAttribute("value", "00:00");
 };
