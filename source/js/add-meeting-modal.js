@@ -53,7 +53,7 @@ formCloseModalButton.addEventListener("click", function (evt) {
   closeNewMeetingModal (evt);
 }, false);
 
-//Далее идет функциядля открытия Модалки новой встречи
+//Далее идет функция для открытия Модалки новой встречи
 
 function addNewMeetingModal (evt) {
 

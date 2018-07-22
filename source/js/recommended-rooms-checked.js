@@ -30,15 +30,15 @@ function checkRoom (element) {
 };
 
 function cancelRoom () {
- for (var i = 0; i < recommendedRoomsLabel.length; i++) {
-   recommendedRoomsLabel[i].classList.remove("recommended-rooms__item--hide");
+  for (var i = 0; i < recommendedRoomsLabel.length; i++) {
+    recommendedRoomsLabel[i].classList.remove("recommended-rooms__item--hide");
 
-   if (recommendedRoomsLabel[i].classList.contains("recommended-rooms__item--checked")) {
-     recommendedRoomsLabel[i].classList.remove("recommended-rooms__item--checked");
-     recommendedRoomsBlock.insertBefore(recommendedRoomsLabel[i], recommendedRoomsBlock.firstChild);
-   }
- };
+    if (recommendedRoomsLabel[i].classList.contains("recommended-rooms__item--checked")) {
+      recommendedRoomsLabel[i].classList.remove("recommended-rooms__item--checked");
+      recommendedRoomsBlock.insertBefore(recommendedRoomsLabel[i], recommendedRoomsBlock.firstChild);
+    }
+  };
 
- recommendedRoomsBlock.classList.add("recommended-rooms--choose-js");
- recommendedRoomsBlock.setAttribute("data-heading", "Рекомендованные переговорки");
+  recommendedRoomsBlock.classList.add("recommended-rooms--choose-js");
+  recommendedRoomsBlock.setAttribute("data-heading", "Рекомендованные переговорки");
 }

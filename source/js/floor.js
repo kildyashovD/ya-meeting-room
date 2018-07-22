@@ -25,9 +25,11 @@ currentDateElement.textContent = (currentDateTextShort + " · Сегодня");
 setDateAttrForm ();
 
 function setDateAttrForm () {
-  //debugger;
   document.querySelector(".add-meeting-form__date").setAttribute("value", currentDateTextLong);
 }
+
+// Начинаем работать с данными по этажам
+// Переговоркам и коллегам
 
 var floorsTemplate = document.querySelector("#floor-template");
 var meetingRoomsTemplate = document.querySelector("#meeting-rooms-template");
@@ -41,17 +43,67 @@ var floors = ["7 этаж", "6 этаж"];
 var workers = [
   {
     name: "Дарт Вейдер",
-    avatar: "img/dart-veider-avatar.jpg"
+    avatar: "img/dart-veider-avatar.jpg",
+    floor: floors[0]
   },
   {
     name: "Человек паук",
-    avatar: "img/spider-avatar.jpg"
+    avatar: "img/spider-avatar.jpg",
+    floor: floors[1]
   },
   {
     name: "Железный человек",
-    avatar: "img/iron-man-avatar.jpg"
+    avatar: "img/iron-man-avatar.jpg",
+    floor: floors[0]
   }
 ];
+
+// Здесь находим блок с коллегами
+// И Генерим туда сотрудников
+
+var participantTemplate = document.querySelector("#participant-template");
+var participantDropList = document.querySelector(".participants-list--drop");
+
+// Это функция генерации коллег
+generateParticipantsDropList ();
+function generateParticipantsDropList () {
+
+  for (var i = 0; i < workers.length; i++) {
+
+    var participantElement = participantTemplate.content.cloneNode("true");
+    var participantAvatar = participantElement.querySelector(".participants-list__avatar");
+    var participantName = participantElement.querySelector(".participants-list__name");
+    var participantFloor = participantElement.querySelector(".participants-list__floor");
+
+    participantAvatar.setAttribute("src", workers[i].avatar);
+    participantName.textContent = workers[i].name;
+    participantFloor.textContent = " · " + workers[i].floor;
+
+    participantDropList.appendChild(participantElement);
+  };
+};
+
+// Здесь мы добавляем обработчик событий на
+// каждый элемент с сотрудников
+// При клике мы копируем содержимое и вставляет в блок
+// С выбранными коллегами
+
+var participantsItems = document.querySelectorAll(".participants-list__item--drop");
+var participantCheckedList = document.querySelector(".participants-list--checked")
+
+setListenerEveryParticipant ();
+function setListenerEveryParticipant () {
+  for (var i = 0; i < participantsItems.length; i++) {
+    participantsItems[i].addEventListener("click", function () {
+      var participantElement = this.cloneNode("true");
+      participantElement.classList.remove("participants-list__item--drop");
+      participantElement.querySelector(".participants-list__avatar").classList.remove("participants-list__avatar--drop");
+      participantElement.querySelector(".participants-list__close").classList.remove("participants-list__close--hidden");
+      participantCheckedList.appendChild(participantElement);
+      participantElement.removeChild(participantElement.querySelector(".participants-list__floor"));
+    });
+  }
+}
 
 var rooms = [
   {
