@@ -1,12 +1,14 @@
 .recommended-rooms {
   display: flex;
   flex-wrap: wrap;
+  align-content: start;
 
   &::before {
     content: attr(data-heading);
 
     display: block;
     position: static;
+    height: 16px;
     margin-bottom: 4px;
 
     font-size: 13px;
@@ -18,6 +20,7 @@
 .recommended-rooms__item {
   box-sizing: border-box;
 
+  position: relative;
   margin-bottom: 8px;
   padding: 10px;
   width: 100%;
@@ -32,8 +35,79 @@
 
     background-color: rgba(0, 125, 255, 1);
   }
+
+  &--hide {
+    display: none;
+  }
+
+  &--checked {
+    color: rgba(255, 255, 255, 1);
+
+    background-color: rgba(0, 125, 255, 1);
+
+    .recommended-rooms__item-delete {
+      display: block;
+    }
+  }
 }
 
 .recommended-rooms__time {
   margin-right: 16px;
+}
+
+.recommended-rooms__input--gotem:checked ~ .recommended-rooms__item--gotem {
+  background-color: rgba(0, 125, 255, 1);
+
+  color: rgba(255, 255, 255, 1);
+}
+
+.recommended-rooms__input--field:checked ~ .recommended-rooms__item--field {
+  background-color: rgba(0, 125, 255, 1);
+
+  color: rgba(255, 255, 255, 1);
+}
+
+.recommended-rooms__input--tower:checked ~ .recommended-rooms__item--tower {
+  background-color: rgba(0, 125, 255, 1);
+
+  color: rgba(255, 255, 255, 1);
+}
+
+.recommended-rooms__item-delete {
+  display: none;
+
+  position: absolute;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  top: 13px;
+  right: 12px;
+
+  border: none;
+
+  background-color: transparent;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 6px;
+    right: 1px;
+    width: 12px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 1);
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 6px;
+    right: 1px;
+    width: 12px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 1);
+    transform: rotate(-45deg);
+  }
 }

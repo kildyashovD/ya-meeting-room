@@ -27,7 +27,7 @@
       <h2 class="diagram-date__heading visually-hidden">Календарь и диаграмма со временем</h2>
 
       <div class="diagram-date__actually-date actually-date">
-        <p class="actually-date__day-value">14 дек · <span class="actually-date__description">Сегодня</span></p>
+        <p class="actually-date__day-value">14 дек</p>
         <button class="actually-date__previous" type="button">Предыдущий день</button>
         <button class="actually-date__next" type="button">Следующий день</button>
       </div>
@@ -164,23 +164,38 @@
             </div>
             <div class="add-meeting-form__item add-meeting-form__item--line-devider-mob">
               <div class="add-meeting-form__container add-meeting-form__container--dates-margin add-meeting-form__container--dates-mob-width-l">
-                <label class="add-meeting-form__heading" for="meeting-date">Даты</label>
+                <label class="add-meeting-form__heading" for="meeting-date">Дата</label>
                 <input class="add-meeting-form__date" name="date" id="meeting-date" type="text" required>
               </div>
               <div class="add-meeting-form__container add-meeting-form__container--times-margin add-meeting-form__container--dates-mob-width-s">
                 <label class="add-meeting-form__heading" for="meeting-start-time">Начало</label>
-                <input class="add-meeting-form__time" name="start-time" id="meeting-start-time" type="text" required>
+                <input class="add-meeting-form__time" name="start-time" id="meeting-start-time" type="text" value="00:00" required>
               </div>
               <div class="add-meeting-form__container add-meeting-form__container--dates-mob-width-s">
                 <label class="add-meeting-form__heading" for="meeting-end-time">Конец</label>
-                <input class="add-meeting-form__time" name="end-time" id="meeting-end-time" type="text" required>
+                <input class="add-meeting-form__time" name="end-time" id="meeting-end-time" type="text" value="00:00" required>
               </div>
             </div>
             <div class="add-meeting-form__item add-meeting-form__item--line-devider-mob">
               <div class="add-meeting-form__container">
                 <label class="add-meeting-form__heading" for="">Участники</label>
                 <input class="add-meeting-form__participants" type="text" placeholder="Например, Тор Одинович">
-                <ul class="participants-list">
+
+                <ul class="participants-list participants-list--drop">
+
+                  <template id="participant-template" style="display: none">
+                    <li class="participants-list__item participants-list__item--drop">
+                      <img class="participants-list__avatar participants-list__avatar--drop" src="img/iron-man-avatar.jpg" alt="Person avatar">
+                      <span class="participants-list__name">Железный человек</span>
+                      <span class="participants-list__floor">1 этаж</span>
+                      <button class="participants-list__close participants-list__close--hidden" type="button" name="button"></button>
+                    </li>
+                  </template>
+
+                </ul>
+
+                <ul class="participants-list participants-list--checked">
+                  <!--
                   <li class="participants-list__item">
                     <img class="participants-list__avatar" src="img/iron-man-avatar.jpg" alt="Person avatar">
                     <span class="participants-list__name">Железный человек</span>
@@ -195,29 +210,33 @@
                     <img class="participants-list__avatar" src="img/dart-veider-avatar.jpg" alt="Person avatar">
                     <span class="participants-list__name">Дарт Вейдер</span>
                     <button class="participants-list__close" type="button" name="button"></button>
-                  </li>
+                  </li>-->
                 </ul>
+
               </div>
             </div>
-            <div class="add-meeting-form__item recommended-rooms" data-heading="Рекомендованные переговорки">
-              <label class="recommended-rooms__item" for="recommended-rooms-gotem">
+            <div class="add-meeting-form__item recommended-rooms recommended-rooms--choose-js" data-heading="Рекомендованные переговорки">
+              <input class="recommended-rooms__input recommended-rooms__input--gotem visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem" required>
+              <label class="recommended-rooms__item recommended-rooms__item--gotem" for="recommended-rooms-gotem">
                 <span class="recommended-rooms__time">16:00-16:30</span>
                 <span class="recommended-rooms__name">Готем</span> ·
                 <span class="recommended-rooms__floor">4 этаж</span>
+                <button class="recommended-rooms__item-delete" type="button"></button>
               </label>
-              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem" required>
-              <label class="recommended-rooms__item" for="recommended-rooms-gotem">
+              <input class="recommended-rooms__input recommended-rooms__input--field visually-hidden" id="recommended-rooms-field" type="radio" name="rooms" value="room-gotem" required>
+              <label class="recommended-rooms__item recommended-rooms__item--field" for="recommended-rooms-field">
                 <span class="recommended-rooms__time">16:00-16:30</span>
                 <span class="recommended-rooms__name">Поле непаханное</span> ·
                 <span class="recommended-rooms__floor">4 этаж</span>
+                <button class="recommended-rooms__item-delete" type="button"></button>
               </label>
-              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem" required>
-              <label class="recommended-rooms__item" for="recommended-rooms-gotem">
+              <input class="recommended-rooms__input recommended-rooms__input--tower visually-hidden" id="recommended-rooms-tower" type="radio" name="rooms" value="room-field" required>
+              <label class="recommended-rooms__item recommended-rooms__item--tower" for="recommended-rooms-tower">
                 <span class="recommended-rooms__time">16:00-16:30</span>
                 <span class="recommended-rooms__name">Темная башня</span> ·
                 <span class="recommended-rooms__floor">4 этаж</span>
+                <button class="recommended-rooms__item-delete" type="button"></button>
               </label>
-              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem" required>
             </div>
           </div>
         </div>
@@ -235,6 +254,7 @@
   <script src="js/add-meeting-modal.js"></script>
   <script src="js/show-event-data.js"></script>
   <script src="js/meeting-rooms-data-scroll.js"></script>
+  <script src="js/recommended-rooms-checked.js"></script>
 </body>
 
 </html>
