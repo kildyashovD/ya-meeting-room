@@ -876,6 +876,7 @@ input[type="radio"].visually-hidden {
 }
 .add-meeting-form__footer {
   padding-top: 20px;
+  padding-bottom: 10px;
   margin-top: auto;
   text-align: center;
   border-top: 1px solid #e9ecef;
@@ -914,12 +915,6 @@ input[type="radio"].visually-hidden {
 }
 .add-meeting-form__container--times-margin {
   margin-right: 22px;
-}
-.add-meeting-form__container--dates-mob-width-l {
-  width: 238px;
-}
-.add-meeting-form__container--dates-mob-width-s {
-  width: 72px;
 }
 .add-meeting-form__container input {
   -webkit-box-sizing: border-box;
@@ -992,8 +987,11 @@ input[type="radio"].visually-hidden {
     height: 44px;
     background-color: #ffffff;
   }
+  .add-meeting-form__container--dates-mob-width-l {
+    width: 100%;
+  }
   .add-meeting-form__container--dates-mob-width-s {
-    width: 153px;
+    width: 46.2%;
   }
   .add-meeting-form__footer {
     padding: 16px 3.8% 20px 0;
@@ -1006,11 +1004,14 @@ input[type="radio"].visually-hidden {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: start;
 }
 .recommended-rooms::before {
   content: attr(data-heading);
   display: block;
   position: static;
+  height: 16px;
   margin-bottom: 4px;
   font-size: 13px;
   font-weight: bold;
@@ -1019,6 +1020,7 @@ input[type="radio"].visually-hidden {
 .recommended-rooms__item {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: relative;
   margin-bottom: 8px;
   padding: 10px;
   width: 100%;
@@ -1030,8 +1032,63 @@ input[type="radio"].visually-hidden {
   color: #ffffff;
   background-color: #007dff;
 }
+.recommended-rooms__item--hide {
+  display: none;
+}
+.recommended-rooms__item--checked {
+  color: #ffffff;
+  background-color: #007dff;
+}
+.recommended-rooms__item--checked .recommended-rooms__item-delete {
+  display: block;
+}
 .recommended-rooms__time {
   margin-right: 16px;
+}
+.recommended-rooms__input--gotem:checked ~ .recommended-rooms__item--gotem {
+  background-color: #007dff;
+  color: #ffffff;
+}
+.recommended-rooms__input--field:checked ~ .recommended-rooms__item--field {
+  background-color: #007dff;
+  color: #ffffff;
+}
+.recommended-rooms__input--tower:checked ~ .recommended-rooms__item--tower {
+  background-color: #007dff;
+  color: #ffffff;
+}
+.recommended-rooms__item-delete {
+  display: none;
+  position: absolute;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  top: 13px;
+  right: 12px;
+  border: none;
+  background-color: transparent;
+}
+.recommended-rooms__item-delete::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 1px;
+  width: 12px;
+  height: 2px;
+  background-color: #ffffff;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.recommended-rooms__item-delete::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 1px;
+  width: 12px;
+  height: 2px;
+  background-color: #ffffff;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 .participants-list {
   display: -webkit-box;
@@ -1042,6 +1099,35 @@ input[type="radio"].visually-hidden {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.participants-list--drop {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: absolute;
+  top: 57px;
+  width: 100%;
+  max-height: 0;
+  overflow-y: scroll;
+  -webkit-box-shadow: 0 1px 10px 0 rgba(0, 44, 92, 0.28);
+          box-shadow: 0 1px 10px 0 rgba(0, 44, 92, 0.28);
+  border-radius: 4px;
+  -webkit-transition: max-height ease 0.5s;
+  transition: max-height ease 0.5s;
+  z-index: 1;
+}
+.participants-list--drop:hover {
+  max-height: 136px;
+}
+.add-meeting-form__participants:focus ~ .participants-list--drop {
+  max-height: 136px;
+  -webkit-transition: max-height ease 0.5s;
+  transition: max-height ease 0.5s;
 }
 .participants-list__item {
   -webkit-box-sizing: border-box;
@@ -1054,6 +1140,17 @@ input[type="radio"].visually-hidden {
   background-color: #e9ecef;
   border-radius: 16px;
 }
+.participants-list__item--drop {
+  margin: 0;
+  height: 34px;
+  padding: 5px 16px 5px 48px;
+  border-radius: 0;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.participants-list__item--drop:hover {
+  background-color: #f6f7f9;
+}
 .participants-list__avatar {
   position: absolute;
   top: 0;
@@ -1061,6 +1158,10 @@ input[type="radio"].visually-hidden {
   width: 24px;
   height: 24px;
   border-radius: 50%;
+}
+.participants-list__avatar--drop {
+  top: 5px;
+  left: 16px;
 }
 .participants-list__name {
   margin: 0;
@@ -1100,6 +1201,19 @@ input[type="radio"].visually-hidden {
   background-color: #afb4b8;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+.participants-list__close--hidden {
+  display: none;
+}
+.participants-list__floor {
+  font-size: 13px;
+  line-height: 15px;
+  color: #858e98;
+}
+@media (max-width: 981px) {
+  .participants-list--drop {
+    top: 63px;
+  }
 }
 .event-data {
   display: none;
