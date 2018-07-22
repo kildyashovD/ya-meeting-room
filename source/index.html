@@ -200,24 +200,24 @@
               </div>
             </div>
             <div class="add-meeting-form__item recommended-rooms" data-heading="Рекомендованные переговорки">
-              <label class="recommended-rooms__item" for="recommended-rooms-gotem">
+              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem" required>
+              <label class="recommended-rooms__item recommended-rooms__item--gotem" for="recommended-rooms-gotem">
                 <span class="recommended-rooms__time">16:00-16:30</span>
                 <span class="recommended-rooms__name">Готем</span> ·
                 <span class="recommended-rooms__floor">4 этаж</span>
               </label>
-              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem" required>
-              <label class="recommended-rooms__item" for="recommended-rooms-gotem">
+              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-field" type="radio" name="rooms" value="room-gotem" required>
+              <label class="recommended-rooms__item recommended-rooms__item--field" for="recommended-rooms-field">
                 <span class="recommended-rooms__time">16:00-16:30</span>
                 <span class="recommended-rooms__name">Поле непаханное</span> ·
                 <span class="recommended-rooms__floor">4 этаж</span>
               </label>
-              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem" required>
-              <label class="recommended-rooms__item" for="recommended-rooms-gotem">
+              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-tower" type="radio" name="rooms" value="room-field" required>
+              <label class="recommended-rooms__item recommended-rooms__item--tower" for="recommended-rooms-tower">
                 <span class="recommended-rooms__time">16:00-16:30</span>
                 <span class="recommended-rooms__name">Темная башня</span> ·
                 <span class="recommended-rooms__floor">4 этаж</span>
               </label>
-              <input class="recommended-rooms__input visually-hidden" id="recommended-rooms-gotem" type="radio" name="rooms" value="room-gotem" required>
             </div>
           </div>
         </div>
@@ -235,6 +235,7 @@
   <script src="js/add-meeting-modal.js"></script>
   <script src="js/show-event-data.js"></script>
   <script src="js/meeting-rooms-data-scroll.js"></script>
+  <script src="js/recommended-rooms-checked.js"></script>
 </body>
 
 </html>
