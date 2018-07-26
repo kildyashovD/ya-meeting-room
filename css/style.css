@@ -913,6 +913,12 @@ input[type="radio"].visually-hidden {
 .add-meeting-form__container--dates-margin {
   margin-right: 16px;
 }
+.add-meeting-form__container--dates-mob-width-l {
+  width: 238px;
+}
+.add-meeting-form__container--dates-mob-width-s {
+  width: 72px;
+}
 .add-meeting-form__container--times-margin {
   margin-right: 22px;
 }
@@ -986,9 +992,6 @@ input[type="radio"].visually-hidden {
     width: 100%;
     height: 44px;
     background-color: #ffffff;
-  }
-  .add-meeting-form__container--dates-mob-width-l {
-    width: 100%;
   }
   .add-meeting-form__container--dates-mob-width-s {
     width: 46.2%;
@@ -1124,6 +1127,9 @@ input[type="radio"].visually-hidden {
 .participants-list--drop:hover {
   max-height: 136px;
 }
+.participants-list--checked .participants-list__item--hidden {
+  display: block;
+}
 .add-meeting-form__participants:focus ~ .participants-list--drop {
   max-height: 136px;
   -webkit-transition: max-height ease 0.5s;
@@ -1150,6 +1156,9 @@ input[type="radio"].visually-hidden {
 }
 .participants-list__item--drop:hover {
   background-color: #f6f7f9;
+}
+.participants-list__item--hidden {
+  display: none;
 }
 .participants-list__avatar {
   position: absolute;

@@ -1,10 +1,10 @@
-"use strict";
-var welcomeModalElement = document.querySelector(".welcome-modal");
+'use strict';
+var welcomeModalElement = document.querySelector('.welcome-modal');
 
-window.addEventListener("load", function () {
+window.addEventListener('load', function () {
   setTimeout(closeWelcomeModal, 1000);
 }, false);
 
 function closeWelcomeModal() {
-  welcomeModalElement.classList.add("welcome-modal--hidden");
+  welcomeModalElement.classList.add('welcome-modal--hidden');
 }
