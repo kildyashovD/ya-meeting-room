@@ -882,6 +882,13 @@ function generateMeetingRoomsTemplate(i) {
 
     if (rooms[k].floor === floors[i]) {
 
+      //debugger;
+
+
+      if (rooms[k].freeTime !== true) {
+        roomsElement.firstElementChild.classList.add('meeting-rooms__data--disabled');
+      }
+
       roomsElement.querySelector('.meeting-rooms__name').textContent = rooms[k].name;
 
       roomsElement.querySelector('.meeting-rooms__size').textContent = rooms[k].size;
