@@ -10,6 +10,9 @@ var buttonAddEventFromTimeline = document.querySelectorAll('.timeline__add-event
 var eventDateForm = document.getElementById('meeting-date');
 var eventStartTimeForm = document.getElementById('meeting-start-time');
 var eventEndTimeForm = document.getElementById('meeting-end-time');
+var eventCreateButton = document.querySelector('.add-meeting-form__submit');
+var eventCreatedModal = document.querySelector('.meeting-created');
+var eventCreatedModalClose = document.querySelector('.meeting-created__close');
 
 // Открывает окно создания Новой встречи
 // Через нажатие на кнопку 'Создать встречу'
@@ -80,16 +83,24 @@ function setDataForm(currentElement) {
   var eventDate = currentElement.getAttribute('data-event-date');
   var startTime = currentElement.getAttribute('data-event-start');
   var endTime = currentElement.getAttribute('data-event-end');
+  var eventRoom = currentElement.getAttribute('data-event-room');
+  var eventFloor = currentElement.getAttribute('data-event-floor');
+
 
   eventDateForm.setAttribute('value', eventDate);
   eventStartTimeForm.setAttribute('value', startTime);
   eventEndTimeForm.setAttribute('value', endTime);
+
+
 
 }
 
 function closeNewMeetingModal(evt) {
 
   evt.preventDefault();
+
+  eventStartTimeForm.setAttribute('value', '00:00');
+  eventEndTimeForm.setAttribute('value', '00:00');
 
   newMeeting.classList.remove('new-meeting--show');
 
@@ -98,7 +109,24 @@ function closeNewMeetingModal(evt) {
   diagramContent.classList.remove('diagram-content--close');
 
   newMeetingOpenModalButton.classList.remove('page-header__link--hide');
-
-  eventStartTimeForm.setAttribute('value', '00:00');
-  eventEndTimeForm.setAttribute('value', '00:00');
 }
+
+// Добавляем слушатель событий
+// На кнопку создания встречи
+
+eventCreateButton.addEventListener('click', function(evt) {
+
+  //debugger;
+
+  closeNewMeetingModal(evt);
+
+  eventCreatedModal.classList.remove('meeting-created--hidden');
+});
+
+// Закрываем модальное окно созданного события
+
+eventCreatedModalClose.addEventListener('click', function(evt) {
+  evt.preventDefault();
+
+  eventCreatedModal.classList.add('meeting-created--hidden');
+});

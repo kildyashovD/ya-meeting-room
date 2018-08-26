@@ -330,6 +330,15 @@ input[type="radio"].visually-hidden {
 .meeting-rooms__data--disabled {
   color: #858e98;
 }
+.meeting-rooms__data--disabled .meeting-rooms__name {
+  color: #858e98;
+}
+.meeting-rooms__data--disabled:hover .meeting-rooms__name {
+  color: #858e98;
+}
+.meeting-rooms__data--disabled:active .meeting-rooms__name {
+  color: #858e98;
+}
 .meeting-rooms__text-content {
   min-width: 221px;
 }
@@ -1289,4 +1298,75 @@ input[type="radio"].visually-hidden {
             box-sizing: border-box;
     width: 100vw;
   }
+}
+.meeting-created {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 16, 33, 0.4);
+  z-index: 200;
+}
+.meeting-created--hidden {
+  display: none;
+}
+.meeting-created__wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 444px;
+  height: 255px;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 200;
+  border-radius: 8px;
+}
+.meeting-created__heading {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  margin-top: 88px;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+.meeting-created__heading::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 200px;
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/emoji2.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.meeting-created__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 6px;
+}
+.meeting-created__time,
+.meeting-created__date,
+.meeting-created__name,
+.meeting-created__floor {
+  margin: 0;
+  font-size: 15px;
+  line-height: 17px;
+}
+.meeting-created__date,
+.meeting-created__name {
+  margin-right: 4px;
+}
+.meeting-created__close {
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 16px;
 }
