@@ -14,8 +14,8 @@
 .actually-date__previous {
   display: block;
   position: absolute;
-  top: 14px;
-  left: 20px;
+  top: 11px;
+  left: 24px;
   width: 24px;
   height: 24px;
 
@@ -53,8 +53,8 @@
 .actually-date__next {
   display: block;
   position: absolute;
-  top: 14px;
-  right: 20px;
+  top: 11px;
+  right: 24px;
   width: 24px;
   height: 24px;
 
@@ -101,5 +101,27 @@
     z-index: 11;
 
     border-bottom: 1px solid rgba(233, 236, 239, 1);
+  }
+
+  .actually-date__previous {
+    left: 16px;
+    width: 32px;
+    height: 32px;
+
+    &::after {
+      top: 12px;
+      left: 13px;
+    }
+  }
+
+  .actually-date__next {
+    right: 22px;
+    width: 32px;
+    height: 32px;
+
+    &::after {
+      top: 12px;
+      left: 9px;
+    }
   }
 }

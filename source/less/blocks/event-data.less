@@ -1,4 +1,6 @@
 .event-data {
+  box-sizing: border-box;
+
   display: none;
   position: absolute;
   top: 100%;
@@ -43,10 +45,17 @@
   font-weight: bold;
 }
 
+.event-data__content {
+  margin: 0;
+  margin-bottom: 10px;
+
+  font-size: 13px;
+}
+
 .event-data__participants {
   display: flex;
   align-items: center;
-  margin-bottom: 0;
+  margin: 0;
 
   font-size: 13px;
   line-height: 17px;
