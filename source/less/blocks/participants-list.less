@@ -51,7 +51,7 @@
   height: 24px;
   margin-right: 8px;
   margin-bottom: 8px;
-  padding: 0 36px 0 36px;
+  padding: 0 36px 0 31px;
 
   background-color: #e9ecef;
 
@@ -155,6 +155,29 @@
   .participants-list {
     &--drop {
       top: 63px;
+    }
+
+    &--checked {
+      .participants-list__item {
+        width: 100%;
+        min-height: 30px;
+        margin-right: 0;
+        padding-left: 40px;
+      }
+
+      .participants-list__avatar {
+        width: 30px;
+        height: 30px;
+      }
+
+      .participants-list__name {
+        font-size: 15px;
+        line-height: 30px;
+      }
+
+      .participants-list__close {
+        top: 6px;
+      }
     }
   }
 }

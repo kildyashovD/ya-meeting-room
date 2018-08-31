@@ -3,6 +3,8 @@
   flex-wrap: wrap;
   align-content: start;
 
+  margin-right: -3px;
+
   &::before {
     content: attr(data-heading);
 
@@ -22,13 +24,15 @@
 
   position: relative;
   margin-bottom: 8px;
-  padding: 10px;
+  padding: 6px 10px 3px 10px;
   width: 100%;
   min-height: 37px;
 
   background-color: #e9ecef;
 
   border-radius: 4px;
+
+  font-size: 13px;
 
   &:hover {
     color: rgba(255, 255, 255, 1);
@@ -52,7 +56,9 @@
 }
 
 .recommended-rooms__time {
-  margin-right: 16px;
+  margin-right: 15px;
+
+  font-weight: bold;
 }
 
 .recommended-rooms__input--gotem:checked ~ .recommended-rooms__item--gotem {
@@ -109,5 +115,18 @@
     height: 2px;
     background-color: rgba(255, 255, 255, 1);
     transform: rotate(-45deg);
+  }
+}
+
+@media (max-width: @adaptive-width) {
+  .recommended-rooms__item {
+    padding: 13px 10px 13px 12px;
+
+    font-size: 15px;
+    line-height: 17px;
+  }
+
+  .recommended-rooms__time {
+    margin-right: 11px;
   }
 }

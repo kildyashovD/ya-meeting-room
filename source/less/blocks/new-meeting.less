@@ -25,9 +25,11 @@
 }
 
 .new-meeting__close {
+  display: block;
+
   position: absolute;
   top: 0;
-  right: 0;
+  right: 7px;
   width: 24px;
   height: 24px;
 
@@ -75,6 +77,15 @@
 }
 
 @media (max-width: @adaptive-width) {
+  .new-meeting__heading {
+    margin-top: 14px;
+    margin-bottom: 15px;
+  }
+
+  .new-meeting__close {
+    display: none;
+  }
+
   .new-meeting__wrapper {
     width: 92.2%;
     margin: auto;

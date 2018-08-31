@@ -926,7 +926,7 @@ function generateTimelineTemplate(i, k, meetingRoomsCount) {
 
       timelineBlocked.querySelector('.event-data__date').textContent = rooms[k].meetings[j].date;
 
-      timelineBlocked.querySelector('.event-data__time').textContent = rooms[k].meetings[j].startTime + ' - ' + rooms[k].meetings[j].endTime;
+      timelineBlocked.querySelector('.event-data__time').textContent = rooms[k].meetings[j].startTime + ' ' + ' - ' + ' ' + rooms[k].meetings[j].endTime;
 
       timelineBlocked.querySelector('.event-data__rooms').textContent = rooms[k].name;
 

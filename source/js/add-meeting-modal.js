@@ -90,9 +90,6 @@ function setDataForm(currentElement) {
   eventDateForm.setAttribute('value', eventDate);
   eventStartTimeForm.setAttribute('value', startTime);
   eventEndTimeForm.setAttribute('value', endTime);
-
-
-
 }
 
 function closeNewMeetingModal(evt) {
