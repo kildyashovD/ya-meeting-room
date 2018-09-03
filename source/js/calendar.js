@@ -99,6 +99,7 @@ function generateDaysCurrentMonth(block, month, day, templateBlock) {
   while (day.getMonth() === month) {
 
     var dayCount = day.getDate();
+    var monthCount = day.getMonth()
     var template = templateBlock.content.cloneNode(true);
 
     // debugger;
@@ -107,7 +108,7 @@ function generateDaysCurrentMonth(block, month, day, templateBlock) {
 
     // Отрисовываем синим цветом
     // Текущий день
-    if (dayCount === DATEDAY) {
+    if (dayCount === DATEDAY && monthCount === DATEMONTH) {
       template.querySelector('.calendar__days-link').classList.add('calendar__days-link--current-day');
     }
 
