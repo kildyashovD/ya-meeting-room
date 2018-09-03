@@ -2,17 +2,17 @@
 
 var ESC_KEYCODE = 27;
 
-var timelineEventBlocked = document.querySelectorAll('.timeline__item--blocked');
+var timelineEventBlockes = document.querySelectorAll('.timeline__item--blocked');
 
 addListenerToEveryBlockedEvent();
 
 function addListenerToEveryBlockedEvent() {
 
-  for (var i = 0; i < timelineEventBlocked.length; i++) {
+  for (var i = 0; i < timelineEventBlockes.length; i++) {
 
-    timelineEventBlocked[i].addEventListener('click', function () {
-      debugger;
-      var currentTimeline = this;
+    timelineEventBlockes[i].addEventListener('click', function (evt) {
+
+      var currentTimeline = evt.target;
       var currentEventData = currentTimeline.querySelector('.event-data');
       var removeClass = 'event-data--show';
 
