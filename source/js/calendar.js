@@ -63,6 +63,7 @@ function addDataCalendar(year, month) {
   generateDaysCurrentMonth(contentCalendarDays, monthCount, dateData, templateDayCurrentMonth);
 
   generateDaysNextMounth(contentCalendarDays, monthCount, dateData, templateDayNextMonth);
+
 }
 
 // Добавления текущего месяца
@@ -83,13 +84,29 @@ function generateDaysPreviousMonth(block, month, day, templateBlock) {
   // Получаем количество дней до первого дня месяца
   // 1 сент = суббота (6 по js)
   // 6 - 1 = 5 дней до субботы
+
   var dayCount = day.getDay() - 1;
+
+  // Переходим а август и получаем первый день, который мы рисуем
+  // Мы получаем первый день текущего месяца
+  // И вычитаем из него количество дней предыдущего месяца
+  // Получаем 27 августа
+  day.setDate(day.getDate() - dayCount);
+  // Присваем это значение счетчику даты за прошлый месяц
+  var dayCountPreviousMonth = day.getDate();
 
   for (var i = 0; i < dayCount; i++) {
 
     var template = templateBlock.content.cloneNode(true);
+    template.querySelector('.calendar__days-link').textContent = dayCountPreviousMonth;
+    template.querySelector('.calendar__days-link').classList.add('calendar__days-link--unavailable');
 
     block.appendChild(template);
+
+    // Прибавляем единицу для отрисовки следующего дня
+    day.setDate(dayCountPreviousMonth + 1);
+    // Присваиваем новое значение счетику
+    dayCountPreviousMonth = day.getDate();
   }
 }
 
@@ -99,7 +116,7 @@ function generateDaysCurrentMonth(block, month, day, templateBlock) {
   while (day.getMonth() === month) {
 
     var dayCount = day.getDate();
-    var monthCount = day.getMonth()
+    var monthCount = day.getMonth();
     var template = templateBlock.content.cloneNode(true);
 
     // debugger;
@@ -118,16 +135,32 @@ function generateDaysCurrentMonth(block, month, day, templateBlock) {
   }
 }
 
-// Добавление дней за следующий день
+// Добавление дней за следующий месяц
 
 function generateDaysNextMounth(block, month, day, templateBlock) {
+
+  // Берем первый день месяца
+  // Получаем количество дней до первого дня месяца
+  // 1 октября = понедельник (0 по js)
+  // 0 дней - ничего не рисуем
+  // Если брать октябрь и добавлять дни за ноябрь
+  // 1 день ноября - четверг
+  // 4 - 1 = 3
+  // dayCount = 3 и добавляем 4 дня пока истинно выражение dayCount < 7
+
   var dayCount = day.getDay() - 1;
 
   if (dayCount !== 0) {
     for (var i = dayCount; i < 7; i++) {
+      var dayCountNextMonth = day.getDate();
+
       var template = templateBlock.content.cloneNode(true);
+      template.querySelector('.calendar__days-link').textContent = dayCountNextMonth;
+      template.querySelector('.calendar__days-link').classList.add('calendar__days-link--unavailable');
 
       block.appendChild(template);
+
+      day.setDate(dayCountNextMonth + 1);
     }
   }
 }
