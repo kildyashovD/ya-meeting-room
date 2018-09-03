@@ -6,6 +6,7 @@
   top: 100%;
   left: 24px;
   max-width: 604px;
+  min-width: 520px;
 
   transition: left 0.3s;
 
@@ -19,6 +20,10 @@
 
   font-size: 13px;
   line-height: 17px;
+
+  &--closed {
+    display: none;
+  }
 }
 
 .calendar__month-value {
@@ -28,6 +33,10 @@
   font-size: 17px;
   line-height: 19px;
   text-align: center;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
 
 .calendar__week-days {
@@ -158,6 +167,7 @@
 
 @media (max-width: @adaptive-width) {
   .calendar {
+    min-width: 520px;
     left: 50%;
 
     transform: translateX(-50%);
@@ -191,6 +201,7 @@
 @media (max-width: 550px) {
   .calendar {
     position: fixed;
+    min-width: auto;
     width: 100%;
     left: 0;
     top: 104px;

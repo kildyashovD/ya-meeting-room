@@ -11,9 +11,9 @@ function addListenerToEveryBlockedEvent() {
   for (var i = 0; i < timelineEventBlocked.length; i++) {
 
     timelineEventBlocked[i].addEventListener('click', function () {
-
+      debugger;
       var currentTimeline = this;
-      var currentEventData = this.querySelector('.event-data');
+      var currentEventData = currentTimeline.querySelector('.event-data');
       var removeClass = 'event-data--show';
 
       if (currentEventData.classList.contains('event-data--show')) {

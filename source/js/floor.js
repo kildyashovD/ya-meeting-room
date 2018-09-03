@@ -101,7 +101,6 @@ var workers = [
 
 var participantTemplate = document.querySelector('#participant-template');
 var participantDropList = document.querySelector('.participants-list--drop');
-var participantDropListItem = document.querySelectorAll('.participants-list--drop');
 
 // Это функция генерации коллег
 generateParticipantsDropList();
@@ -130,18 +129,17 @@ function generateParticipantsDropList() {
 // С выбранными коллегами
 
 var participantsList = document.querySelectorAll('.participants-list');
-var participantDropList = document.querySelector('.participants-list--drop');
 var participantCheckedList = document.querySelector('.participants-list--checked');
 
 participantsList[0].addEventListener('click', function (e) {
   var targetElement = e.target;
 
-  addCheckedParticipant (targetElement);
+  addCheckedParticipant(targetElement);
 });
 
-function addCheckedParticipant (targetElement) {
-  while (targetElement != participantsList[0]) {
-    //debugger;
+function addCheckedParticipant(targetElement) {
+  while (targetElement !== participantsList[0]) {
+
     if (targetElement.classList.contains('participants-list__item--drop')) {
       var participantElement = targetElement;
       participantElement.classList.remove('participants-list__item--drop');
@@ -161,20 +159,19 @@ function addCheckedParticipant (targetElement) {
 
 participantsList[1].addEventListener('click', function (e) {
   var targetElement = e.target;
-  //debugger;
 
-  deleteCheckedParticipant (targetElement);
+  deleteCheckedParticipant(targetElement);
 });
 
-function deleteCheckedParticipant (targetElement) {
-  while (targetElement != participantsList[1]) {
+function deleteCheckedParticipant(targetElement) {
+  while (targetElement !== participantsList[1]) {
     if (targetElement.classList.contains('participants-list__close')) {
       var participantsItem = targetElement.parentNode;
       participantsItem = participantsItem.parentNode;
 
       var partcipantChecked = targetElement.parentNode;
 
-      partcipantChecked.classList.add('participants-list__item--drop')
+      partcipantChecked.classList.add('participants-list__item--drop');
       partcipantChecked.querySelector('.participants-list__avatar').classList.add('participants-list__avatar--drop');
       partcipantChecked.querySelector('.participants-list__close').classList.add('participants-list__close--hidden');
       partcipantChecked.classList.remove('participants-list__item--hidden');
@@ -882,9 +879,6 @@ function generateMeetingRoomsTemplate(i) {
 
     if (rooms[k].floor === floors[i]) {
 
-      //debugger;
-
-
       if (rooms[k].freeTime !== true) {
         roomsElement.firstElementChild.classList.add('meeting-rooms__data--disabled');
       }
@@ -936,9 +930,15 @@ function generateTimelineTemplate(i, k, meetingRoomsCount) {
 
       if (rooms[k].meetings[j].participants.length > 1) {
 
-        var wordEnding =
-        ((rooms[k].meetings[j].participants.length - 1) === 1) ? '' :
-          ((rooms[k].meetings[j].participants.length - 1) > 1 && (rooms[k].meetings[j].participants.length - 1) < 4) ? 'а' : 'ов';
+        var wordEnding;
+
+        if ((rooms[k].meetings[j].participants.length - 1) === 1) {
+          wordEnding = '';
+        } else if ((rooms[k].meetings[j].participants.length - 1) > 1 && (rooms[k].meetings[j].participants.length - 1) < 4) {
+          wordEnding = 'а';
+        } else {
+          wordEnding = 'ов';
+        }
 
         timelineBlocked.querySelector('.event-data__participants-count').textContent = 'и ' + (rooms[k].meetings[j].participants.length - 1) + ' участник' + wordEnding;
       }

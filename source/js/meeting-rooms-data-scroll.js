@@ -15,7 +15,9 @@ function roomsOnScroll(e) {
     }
   } else {
     for (var k = 0; k < e.length; k++) {
-      e[k].classList.contains('meeting-rooms__name--mob-scroll-js') && e[k].classList.remove('meeting-rooms__name--mob-scroll-js');
+      if (e[k].classList.contains('meeting-rooms__name--mob-scroll-js')) {
+        e[k].classList.remove('meeting-rooms__name--mob-scroll-js');
+      }
     }
   }
 }
