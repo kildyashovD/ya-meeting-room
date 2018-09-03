@@ -83,9 +83,6 @@ function setDataForm(currentElement) {
   var eventDate = currentElement.getAttribute('data-event-date');
   var startTime = currentElement.getAttribute('data-event-start');
   var endTime = currentElement.getAttribute('data-event-end');
-  var eventRoom = currentElement.getAttribute('data-event-room');
-  var eventFloor = currentElement.getAttribute('data-event-floor');
-
 
   eventDateForm.setAttribute('value', eventDate);
   eventStartTimeForm.setAttribute('value', startTime);
@@ -111,9 +108,7 @@ function closeNewMeetingModal(evt) {
 // Добавляем слушатель событий
 // На кнопку создания встречи
 
-eventCreateButton.addEventListener('click', function(evt) {
-
-  //debugger;
+eventCreateButton.addEventListener('click', function (evt) {
 
   closeNewMeetingModal(evt);
 
@@ -122,7 +117,7 @@ eventCreateButton.addEventListener('click', function(evt) {
 
 // Закрываем модальное окно созданного события
 
-eventCreatedModalClose.addEventListener('click', function(evt) {
+eventCreatedModalClose.addEventListener('click', function (evt) {
   evt.preventDefault();
 
   eventCreatedModal.classList.add('meeting-created--hidden');

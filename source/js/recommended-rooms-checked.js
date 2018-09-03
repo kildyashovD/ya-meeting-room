@@ -4,18 +4,19 @@ var recommendedRoomsBlock = document.querySelector('.recommended-rooms');
 var recommendedRoomsLabel = document.querySelectorAll('.recommended-rooms__item');
 
 recommendedRoomsBlock.addEventListener('click', function (evt) {
+
   evt.preventDefault();
   var targetElement = evt.target;
 
-  if (this.classList.contains('recommended-rooms--choose-js')) {
-    while (targetElement !== this) {
+  if (recommendedRoomsBlock.classList.contains('recommended-rooms--choose-js')) {
+    while (targetElement !== recommendedRoomsBlock) {
       if (targetElement.classList.contains('recommended-rooms__item')) {
         checkRoom(targetElement);
-        this.setAttribute('data-heading', 'Ваша переговорка');
+        recommendedRoomsBlock.setAttribute('data-heading', 'Ваша переговорка');
       }
       targetElement = targetElement.parentNode;
     }
-    this.classList.remove('recommended-rooms--choose-js');
+    recommendedRoomsBlock.classList.remove('recommended-rooms--choose-js');
   } else if (targetElement.classList.contains('recommended-rooms__item-delete')) {
     cancelRoom();
   }

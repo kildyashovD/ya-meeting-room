@@ -27,56 +27,51 @@
       <h2 class="diagram-date__heading visually-hidden">Календарь и диаграмма со временем</h2>
 
       <div class="diagram-date__actually-date actually-date">
-        <p class="actually-date__day-value">14 дек</p>
+        <a class="actually-date__day-value" href="#">14 дек</a>
         <button class="actually-date__previous" type="button">Предыдущий день</button>
         <button class="actually-date__next" type="button">Следующий день</button>
       </div>
 
-      <div class="diagram-date__calendar calendar visually-hidden">
+      <div class="diagram-date__modal-layout diagram-date__modal-layout--hidden"></div>
+
+      <div class="diagram-date__calendar calendar calendar--closed">
+
         <div class="calendar__month">
-          <p class="caledar__month-value">Май · <span class="calendar__year-value">2018</span></p>
-          <ul class="calendar__week-days">
-            <li class="calendar__week-days-value">Пн</li>
-            <li class="calendar__week-days-value">Вт</li>
-            <li class="calendar__week-days-value">Ср</li>
-            <li class="calendar__week-days-value">Чт</li>
-            <li class="calendar__week-days-value">Пт</li>
-            <li class="calendar__week-days-value">Сб</li>
-            <li class="calendar__week-days-value">Вс</li>
-          </ul>
-          <ul class="calendar__days">
-            <li class="calendar__days-value">1</li>
-            <li class="calendar__days-value">2</li>
-            <li class="calendar__days-value">3</li>
-            <li class="calendar__days-value">4</li>
-            <li class="calendar__days-value">5</li>
-            <li class="calendar__days-value">6</li>
-            <li class="calendar__days-value">7</li>
-            <li class="calendar__days-value">8</li>
-            <li class="calendar__days-value">9</li>
-            <li class="calendar__days-value">10</li>
-            <li class="calendar__days-value">11</li>
-            <li class="calendar__days-value">12</li>
-            <li class="calendar__days-value">13</li>
-            <li class="calendar__days-value">14</li>
-            <li class="calendar__days-value">15</li>
-            <li class="calendar__days-value">16</li>
-            <li class="calendar__days-value">17</li>
-            <li class="calendar__days-value">18</li>
-            <li class="calendar__days-value">19</li>
-            <li class="calendar__days-value">20</li>
-            <li class="calendar__days-value">21</li>
-            <li class="calendar__days-value">22</li>
-            <li class="calendar__days-value">23</li>
-            <li class="calendar__days-value">24</li>
-            <li class="calendar__days-value">25</li>
-            <li class="calendar__days-value">26</li>
-            <li class="calendar__days-value">27</li>
-            <li class="calendar__days-value">28</li>
-            <li class="calendar__days-value">29</li>
-            <li class="calendar__days-value">30</li>
-          </ul>
+          <p class="calendar__month-value">Сентябрь 2018</p>
+          <button class="calendar__previous" type="button">Предыдущий день</button>
+          <button class="calendar__next" type="button">Следующий день</button>
         </div>
+        <ul class="calendar__week-days">
+          <li class="calendar__week-days-value">Пн</li>
+          <li class="calendar__week-days-value">Вт</li>
+          <li class="calendar__week-days-value">Ср</li>
+          <li class="calendar__week-days-value">Чт</li>
+          <li class="calendar__week-days-value">Пт</li>
+          <li class="calendar__week-days-value">Сб</li>
+          <li class="calendar__week-days-value">Вс</li>
+        </ul>
+        <ul class="calendar__days">
+
+        </ul>
+
+        <template id="calendar-days-previous-month" style="display: none">
+          <li class="calendar__days-value"><a class="calendar__days-link calendar__days-link--unavailable" href="#"></a></li>
+        </template>
+
+        <template id="calendar-days-current-month" style="display: none">
+          <li class="calendar__days-value"><a class="calendar__days-link" href="#"></a></li>
+        </template>
+
+        <template id="calendar-days-next-month" style="display: none">
+          <li class="calendar__days-value"><a class="calendar__days-link" href="#"></a></li>
+        </template>
+
+        <!--
+
+        <li class="calendar__days-value"><a class="calendar__days-link calendar__days-link--unavailable" href="#">31</a></li>
+        <li class="calendar__days-value"><a class="calendar__days-link calendar__days-link--current-day" href="#">1</a></li>
+
+      -->
       </div>
 
       <ul class="diagram-time">
@@ -256,6 +251,7 @@
   <script src="js/show-event-data.js"></script>
   <script src="js/meeting-rooms-data-scroll.js"></script>
   <script src="js/recommended-rooms-checked.js"></script>
+  <script src="js/calendar.js"></script>
 </body>
 
 </html>
