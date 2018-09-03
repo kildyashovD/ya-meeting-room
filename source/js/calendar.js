@@ -2,8 +2,9 @@
 
 var buttonOpenCalendar = document.querySelector('.actually-date__day-value');
 var calendarBlock = document.querySelector('.calendar');
-// var calendarLayout = document.querySelector('.diagram-date__modal-layout');
+var calendarLayout = document.querySelector('.diagram-date__modal-layout');
 var classClosedCalendar = 'calendar--closed';
+var classClosedLayout = 'diagram-date__modal-layout--hidden';
 
 // Открытие и закрытие окна
 
@@ -12,8 +13,10 @@ buttonOpenCalendar.addEventListener('click', function (evt) {
 
   if (calendarBlock.classList.contains(classClosedCalendar)) {
     openModal(calendarBlock, classClosedCalendar);
+    openModal(calendarLayout, classClosedLayout);
   } else {
     closeModal(calendarBlock, classClosedCalendar);
+    closeModal(calendarLayout, classClosedLayout);
 
     deleteCurrentElement();
     addDataCalendar(DATEYEAR, DATEMONTH);
