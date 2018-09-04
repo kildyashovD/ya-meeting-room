@@ -13,7 +13,6 @@ var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
 var rigger = require("gulp-rigger");
-var sourcemaps = require("gulp-sourcemaps");
 var uglify = require("gulp-uglify");
 var run = require("run-sequence");
 
@@ -58,10 +57,8 @@ gulp.task("serve", function() {
 gulp.task("js", function() {
   return gulp.src("source/js/main.js")
     .pipe(plumber())
-    //.pipe(sourcemaps.init())
     .pipe(rigger())
     .pipe(uglify())
-    //.pipe(sourcemaps.write())
     .pipe(gulp.dest("build/js"))
     .pipe(server.stream());
 });
