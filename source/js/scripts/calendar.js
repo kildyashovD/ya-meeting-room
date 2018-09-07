@@ -19,9 +19,9 @@ buttonOpenCalendar.addEventListener('click', function (evt) {
     closeModal(calendarLayout, classClosedLayout);
 
     deleteCurrentElement();
-    addDataCalendar(DATEYEAR, DATEMONTH);
-    dateYear = DATEYEAR;
-    dateMonth = DATEMONTH;
+    addDataCalendar(DateConst.YEAR, DateConst.MONTH);
+    dateYear = DateConst.YEAR;
+    dateMonth = DateConst.MONTH;
   }
 });
 
@@ -39,12 +39,8 @@ var contentCalendarDays = calendarBlock.querySelector('.calendar__days');
 var templateDayPreviousMonth = calendarBlock.querySelector('#calendar-days-previous-month');
 var templateDayCurrentMonth = calendarBlock.querySelector('#calendar-days-current-month');
 var templateDayNextMonth = calendarBlock.querySelector('#calendar-days-current-month');
-var dateDataGlobal = new Date();
-var DATEYEAR = dateDataGlobal.getFullYear();
-var DATEMONTH = dateDataGlobal.getMonth();
-var DATEDAY = dateDataGlobal.getDate();
-var dateYear = dateDataGlobal.getFullYear();
-var dateMonth = dateDataGlobal.getMonth();
+var dateYear = dateCurrent.getFullYear();
+var dateMonth = dateCurrent.getMonth();
 
 var dateHeader = calendarBlock.querySelector('.calendar__month-value');
 var dateHeaderData = {
@@ -128,7 +124,7 @@ function generateDaysCurrentMonth(block, month, day, templateBlock) {
 
     // Отрисовываем синим цветом
     // Текущий день
-    if (dayCount === DATEDAY && monthCount === DATEMONTH) {
+    if (dayCount === DateConst.DAY && monthCount === DateConst.MONTH) {
       template.querySelector('.calendar__days-link').classList.add('calendar__days-link--current-day');
     }
 
