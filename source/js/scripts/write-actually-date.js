@@ -1,6 +1,6 @@
 'use strict';
 
-(function() {
+(function () {
 
   window.currentDateTextShort = dateCurrent.toLocaleString('ru', DateOption.short);
   currentDateTextShort = currentDateTextShort.slice(0, currentDateTextShort.length - 1);

@@ -1,6 +1,6 @@
 'use strict';
 
-(function(){
+(function () {
   var welcomeModalElement = document.querySelector('.welcome-modal');
 
   window.addEventListener('load', function () {
