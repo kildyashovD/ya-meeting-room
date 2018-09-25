@@ -1,3 +1,5 @@
+//= ../js/scripts/open-close-modal.js
+
 //= ../js/scripts/current-date.js
 
 //= ../js/scripts/date-options.js

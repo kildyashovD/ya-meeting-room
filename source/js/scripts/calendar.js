@@ -25,14 +25,6 @@ buttonOpenCalendar.addEventListener('click', function (evt) {
   }
 });
 
-function openModal(modalElement, classClosed) {
-  modalElement.classList.remove(classClosed);
-}
-
-function closeModal(modalElement, classClosed) {
-  modalElement.classList.add(classClosed);
-}
-
 // Добавляем данные в календарь
 
 var contentCalendarDays = calendarBlock.querySelector('.calendar__days');

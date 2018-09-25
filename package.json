@@ -29,7 +29,7 @@
   "scripts": {
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
-    "eslint": "eslint \"source/js/scripts/*.js\"",
+    "eslint": "eslint \"build/js/main.js\"",
     "test": "npm run editorconfig && npm run stylelint && npm run eslint",
     "build": "gulp build",
     "start": "npm run build && gulp serve"
