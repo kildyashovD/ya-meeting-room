@@ -725,6 +725,11 @@ input[type="radio"].visually-hidden {
   background-color: #007dff;
   border-radius: 2px;
 }
+@media (min-width: 1450px) {
+  .timeline {
+    padding: 0 2.7%;
+  }
+}
 @media (max-width: 981px) {
   .timeline {
     min-width: 800px;
