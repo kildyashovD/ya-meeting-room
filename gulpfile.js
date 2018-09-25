@@ -12,6 +12,8 @@ var imagemin = require("gulp-imagemin");
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
+var rigger = require("gulp-rigger");
+var uglify = require("gulp-uglify");
 var run = require("run-sequence");
 
 gulp.task("style", function() {
@@ -47,22 +49,24 @@ gulp.task("serve", function() {
     ui: false
   });
 
-  gulp.watch("source/js/*.js", ["js"]).on("change", server.reload);
+  gulp.watch("source/js/scripts/*.js", ["js"]).on("change", server.reload);
   gulp.watch("source/less/**/*.less", ["style"]);
   gulp.watch("source/*.html", ["html"]).on("change", server.reload);
 });
 
 gulp.task("js", function() {
-  return gulp.src("source/js/*.js")
+  return gulp.src("source/js/main.js")
     .pipe(plumber())
-    .pipe(gulp.dest("build/js"));
+    .pipe(rigger())
+    .pipe(uglify())
+    .pipe(gulp.dest("build/js"))
+    .pipe(server.stream());
 });
 
 gulp.task("copy", function() {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
-    "source/img/**",
-    "source/js/**"
+    "source/img/**"
   ], {
     base: "source"
   })
